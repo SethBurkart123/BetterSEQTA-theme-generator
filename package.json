@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "hacker": "postcss css/hacker.css -o dist/output.css --watch"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
+    "postcss-extend": "^1.0.5",
+    "postcss-import": "^16.1.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss-mixins": "^10.0.1"
+  }
+}

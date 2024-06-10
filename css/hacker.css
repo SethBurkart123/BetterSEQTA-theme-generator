@@ -1,0 +1,414 @@
+@import '../lib/augmented-ui.css';
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+[hacker] {
+  border-radius: 0 !important;
+  background: black !important;
+}
+
+/* 
+
+========== Shape Types ==========
+
+*/
+
+.base {
+  @extend [hacker];
+  @extend [data-augmented-ui];
+  @extend [data-augmented-ui~="tl-clip-x"];
+  @extend [data-augmented-ui~="t-rect"];
+  @extend [data-augmented-ui~="tr-rect-y"];
+  @extend [data-augmented-ui~="r-rect"];
+  @extend [data-augmented-ui~="br-2-clip-y"];
+  @extend [data-augmented-ui~="b-rect-xy"];
+  @extend [data-augmented-ui~="bl-clip-x"];
+  @extend [data-augmented-ui~="l-clip-x"];
+  @extend [data-augmented-ui~="border"];
+}
+
+.base2 {
+  @extend [hacker];
+  @extend [data-augmented-ui];
+  @extend [data-augmented-ui~="tl-2-clip-x"];
+  @extend [data-augmented-ui~="t-rect-xy"];
+  @extend [data-augmented-ui~="tr-2-clip-x"];
+  @extend [data-augmented-ui~="r-clip"];
+  @extend [data-augmented-ui~="br-2-clip-x"];
+  @extend [data-augmented-ui~="b-rect"];
+  @extend [data-augmented-ui~="bl-clip"];
+  @extend [data-augmented-ui~="l-rect-xy"];
+  @extend [data-augmented-ui~="border"];
+}
+
+.base3 {
+  @extend [hacker];
+  @extend [data-augmented-ui];
+  @extend [data-augmented-ui~="tl-clip"];
+  @extend [data-augmented-ui~="t-rect-xy"];
+  @extend [data-augmented-ui~="tr-clip"];
+  @extend [data-augmented-ui~="r-clip"];
+  @extend [data-augmented-ui~="br-clip-x"];
+  @extend [data-augmented-ui~="b-rect"];
+  @extend [data-augmented-ui~="bl-clip-y"];
+  @extend [data-augmented-ui~="l-rect-xy"];
+  @extend [data-augmented-ui~="border"];
+}
+
+/* 
+
+========== Borders ==========
+
+*/
+
+.thin {
+  --aug-border-all: 1px;
+  --aug-border-bg: var(--better-main);
+}
+
+.button {
+  background: linear-gradient(to bottom, rgb(0 68 0), black) !important;
+}
+
+/* 
+
+========== Shape Intensities ==========
+
+*/
+
+@define-mixin cornerScale $tl, $tr, $bl, $br {
+  --aug-tl: $tl;
+  --aug-tr: $tr;
+  --aug-br: $br;
+  --aug-bl: $bl;
+}
+
+@define-mixin sideScale $t, $b, $l, $r {
+  --aug-t: $t;
+  --aug-b: $b;
+  --aug-l: $l;
+  --aug-r: $r;
+}
+
+.no-sides {
+  --aug-t: 0px !important;
+  --aug-b: 0px !important;
+  --aug-r: 0px !important;
+  --aug-l: 0px !important;
+}
+
+.transition {
+  transition: all 0.2s ease-out !important;
+}
+
+/* 
+
+========== Content Application ==========
+
+*/
+
+html {
+  --background-primary: black !important;
+  --background-secondary: black !important;
+  --theme-primary: black !important;
+  --theme-secondary: black !important;
+  --text-color: white !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Play', sans-serif;
+}
+
+#menu {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+.cke_toolbox > .cke_toolbar > .cke_toolgroup > .cke_button:last-child,
+.cke_toolbox > .cke_toolbar > .cke_toolgroup > .cke_button:first-child {
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.dark .cke_toolbox > .cke_toolbar .cke_combo_on > .cke_combo_button, .dark .cke_toolbox > .cke_toolbar .cke_button_on {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.cke_toolgroup > a,
+.cke_toolgroup > a:hover,
+.shortcut:hover,
+.shortcut {
+  background: transparent;
+}
+
+.legacy-root button::after {
+  border-radius: 0 !important;
+  background: var(--better-main) !important;
+  padding-top: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: scale(1) !important;
+}
+
+#main > .reports > .item > .report {
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--better-main) 20%, black), black) !important;
+}
+
+#main > .reports > .item > .report,
+.MenuButton__MenuPanel___2q42B {
+  @extend .base3;
+  @extend .thin;
+  @extend .no-sides;
+  @extend .transition;
+  @mixin cornerScale 0px, 20px, 12px, 12px;
+}
+
+.pane .header .alpha button.uiButton {
+  --aug-tr-extend1: 24px !important;
+}
+
+.alpha button.uiButton:hover {
+  --aug-tr: 8px !important;
+  --aug-bl: 8px !important;
+  --aug-br: 0px !important;
+  --aug-tl: 0px !important;
+}
+
+.wordCount,
+span.cke_toolgroup {
+  color: var(--better-main) !important;
+}
+
+.shortcuts {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.uiFileHandler {
+  background: radial-gradient(circle at 50% -400%, var(--better-main) 0%, transparent 80%) !important;
+}
+
+.uiFileHandlerPanel .uiButton.close {
+  right: 16px !important;
+}
+.uiFileHandlerPanel {
+  .PillBox__PillBox___3GjAk {
+    @extend .base;
+    @extend .thin;
+    @extend .no-sides;
+    @mixin cornerScale 5px, 4px, 2px, 2px;
+
+    background: linear-gradient(to bottom, color-mix(in srgb, var(--better-main) 20%, transparent), black) !important;
+
+    .Button__Button___3SRFo {
+      background: transparent !important;
+    }
+
+    .PillBox__active___3Qpi9 {
+      background: var(--better-main) !important;
+    }
+  }
+}
+
+
+.pillbox {
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--better-main) 20%, black), black) !important;
+
+  @extend .base;
+  @extend .thin;
+  @extend .no-sides;
+  @extend .transition;
+  @mixin cornerScale 5px, 4px, 2px, 2px;
+
+  > button {
+    background: transparent !important;
+    color: var(--better-main) !important;
+
+    &.depressed {
+      background: var(--better-main) !important;
+      color: black !important;
+    }
+  }
+}
+
+.legacy-root ul.singleSelect {
+  border-radius: 0px !important;
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--better-main) 20%, black), black) !important;
+  border: 1px solid var(--better-main) !important;
+}
+
+.anyoneSelect .selector {
+  background: radial-gradient(#000000, color-mix(in srgb, var(--better-main) 50%, black)) !important;
+  border-radius: 0 !important;
+
+  @extend .base3;
+  @extend .thin;
+  @extend .no-sides;
+  @extend .transition;
+  @mixin cornerScale 3px, 6px, 3px, 6px;
+
+  input {
+    background: transparent !important;
+  }
+
+  &::after {
+    background: var(--better-main) !important;
+  }
+}
+
+.PillBox__PillBox___3GjAk {
+  --aug-tl: 6px !important;
+  --aug-tr: 2px !important;
+  --aug-bl: 4px !important;
+  --aug-br: 4px !important;
+
+  > button {
+    background: transparent !important;
+
+    &.PillBox__active___3Qpi9 {
+      background: color-mix(in srgb, var(--better-main) 20%, black) !important;
+    }
+  }
+}
+
+.Input__Input___3RSTI,
+.LabelList__selected___3Egk7,
+:not(.PillBox__PillBox___3GjAk) > .Button__Button___3SRFo:not(.Button__circular___2dGEX),
+.legacy-root button.uiButton:not(.close),
+.legacy-root a:not(.cke_button) {
+  @extend .base2;
+  @extend .thin;
+  @extend .no-sides;
+  @extend .button;
+  @extend .transition;
+  @mixin cornerScale 0px, 8px, 8px, 0px;
+}
+
+#main > .reports > .item > .report:hover {
+  @mixin cornerScale 16px, 0px, 0px, 24px;
+}
+
+.legacy-root button.uiButton:hover:not(.close),
+.legacy-root a:hover {
+  @mixin cornerScale 8px, 0px, 0px, 8px;
+}
+
+.uiSlidePane .pane .header {
+  background: black;
+}
+
+#content {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.uiFileHandlerPanel {
+  @extend .base;
+  @extend .thin;
+  @extend .no-sides;
+  @extend .transition;
+  @mixin cornerScale 12px, 12px, 24px, 16px;
+  @mixin sideScale 0px, 0px, 0px, 0px;
+}
+
+.cke_contents {
+  margin-left: 16px;
+
+  @extend .base;
+  @extend .thin;
+  @extend .no-sides;
+  @extend .transition;
+  @mixin cornerScale 12px, 12px, 24px, 16px;
+  @mixin sideScale 0px, 0px, 0px, 0px;
+}
+
+#ExtensionPopup,
+.Message__Message___3oJaU,
+.uiSlidePane .pane.tall,
+.home-container > div {
+  overflow: clip !important;
+
+  --aug-b-extend1: 64px;
+
+  @extend .base2;
+  @extend .thin;
+  @mixin cornerScale 0px, 12px, 24px, 0px;
+  @mixin sideScale 0px, 12px, 6px, 0px;
+}
+
+.timetable-container {
+  --aug-b-extend1: 164px !important;
+}
+
+#ExtensionPopup {
+  position: absolute !important;
+  --aug-tr: 8px !important;
+  --aug-tl: 8px !important;
+  --aug-l-extend1: 50% !important;
+
+  > iframe {
+    filter: contrast(1.3) !important;
+  }
+
+  &::after {
+    background: var(--better-main) !important;
+  }
+}
+
+.cke_contents,
+.Message__Message___3oJaU,
+#ExtensionPopup {
+  &::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeat-y linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent) !important;
+    background-size: 100% 4px !important;
+    z-index: 1;
+    animation: move4px 0.2s linear forwards infinite, flicker 0.1s linear forwards infinite;
+  }
+
+  &::after {
+    z-index: 2;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
+
+@keyframes move4px {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(4px);
+  }
+}
+
+.Message__Message___3oJaU {
+  padding: 8px;
+  --aug-l-extend1: 50% !important;
+}
+
+.uiSlidePane .pane.tall {
+  --aug-l-extend1: 248px !important;
+}
+
+.cke_combopanel {
+  filter: invert(1);
+}
+
+.MediaRecorder__ready___6kdd6 {
+  color: var(--better-main) !important;
+  opacity: 0.8 !important;
+}
+
