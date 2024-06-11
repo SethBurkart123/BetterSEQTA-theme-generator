@@ -2,6 +2,13 @@
 
 A repository to assist in packaging CSS frameworks into BetterSEQTA+ Themes.
 
+## Features
+
+- Ability to use @import to import and break down styles
+- Ability to use mixins to create reusable styles
+- Ability to use simple variables to create reusable styles
+- Ability to use extend to create reusable styles
+
 ## Getting Started
 
 1. Clone the repository
