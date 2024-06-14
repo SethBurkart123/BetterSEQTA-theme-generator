@@ -1,5 +1,22 @@
 @import '../lib/augmented-ui.css';
-@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+ul.singleSelect > li:has(.extra) {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+}
+
+.singleSelect,
+.uiShortText.subject,
+body button.Button__Button___3SRFo,
+body button.uiButton,
+.MessageList__subject___1NV5O,
+.Message__subject___3jJWQ,
+.shortcut,
+#menu li,
+h1, h2, h4, h5, h6, button {
+  font-family: 'Orbitron', sans-serif !important;
+}
 
 [hacker] {
   border-radius: 0 !important;
@@ -112,14 +129,6 @@ html {
   --theme-primary: black !important;
   --theme-secondary: black !important;
   --text-color: white !important;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Play', sans-serif;
-}
-
-#menu {
-  background: rgba(0, 0, 0, 0.8) !important;
 }
 
 .cke_toolbox > .cke_toolbar > .cke_toolgroup > .cke_button:last-child,
@@ -275,7 +284,7 @@ span.cke_toolgroup {
 .LabelList__selected___3Egk7,
 :not(.PillBox__PillBox___3GjAk) > .Button__Button___3SRFo:not(.Button__circular___2dGEX),
 .legacy-root button.uiButton:not(.close),
-.legacy-root a:not(.cke_button) {
+.legacy-root a:not(.cke_button):not(.NewsArticle) {
   @extend .base2;
   @extend .thin;
   @extend .no-sides;
@@ -354,6 +363,49 @@ span.cke_toolgroup {
   }
 }
 
+#menu {
+  @extend .base2;
+  @extend .thin;
+  @extend [data-augmented-ui~="r-rect-xy"];
+  @mixin cornerScale 12px, 24px, 12px, 24px;
+  @mixin sideScale 0px, 0px, 0px, 4px;
+  --aug-r-extend1: 50% !important;
+  height: 100% !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+
+  li.active:not(.hasChildren) {
+    @extend .base3;
+    @extend .thin;
+    @extend .button;
+    @extend .transition;
+    @extend .no-sides;
+    @mixin cornerScale 4px, 16px, 8px, 4px;
+    
+    &[data-colour] {
+      --aug-bl: 0px !important;
+    }
+  }
+
+}
+
+#title {
+  position: absolute !important;
+
+  &::before {
+    content: unset;
+  }
+}
+
+.course > .content {
+  padding: 0 10% !important;
+
+  .iframeWrapper .userHTML {
+    height: auto !important;
+  }
+}
+
+#menu,
+.home-container > div,
 .cke_contents,
 .Message__Message___3oJaU,
 #ExtensionPopup {
@@ -365,8 +417,8 @@ span.cke_toolgroup {
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeat-y linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent) !important;
-    background-size: 100% 4px !important;
+    background: repeat-y linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent) !important;
+    background-size: 100% 3px !important;
     z-index: 1;
     animation: move4px 0.2s linear forwards infinite, flicker 0.1s linear forwards infinite;
   }
