@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "hacker": "postcss css/hacker.css -o dist/output.css --watch"
+    "hacker": "bun watchAndCopy.ts css/hacker.css dist/output.css"
   },
   "devDependencies": {
     "postcss": "^8.4.38",
@@ -9,7 +9,10 @@
     "postcss-import": "^16.1.0"
   },
   "dependencies": {
+    "@types/node": "^22.1.0",
     "autoprefixer": "^10.4.19",
+    "chokidar": "^3.6.0",
+    "clipboardy": "^4.0.0",
     "postcss-mixins": "^10.0.1"
   }
 }

@@ -302,6 +302,14 @@ span.cke_toolgroup {
   @mixin cornerScale 8px, 0px, 0px, 8px;
 }
 
+.timetablepage .wrapper .actions > * {
+  color: white !important;
+  > svg,
+  g {
+    color: white !important;
+  }
+}
+
 .uiSlidePane .pane .header {
   background: black;
 }

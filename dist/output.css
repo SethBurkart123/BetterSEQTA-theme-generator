@@ -2278,6 +2278,11 @@
   --aug-tr: 0px;
   --aug-br: 8px;
   --aug-bl: 0px;
+}.timetablepage .wrapper .actions > * {
+  color: white !important;
+  > svg, g {
+    color: white !important;
+  }
 }.uiSlidePane .pane .header {
   background: black;
 }#content {
