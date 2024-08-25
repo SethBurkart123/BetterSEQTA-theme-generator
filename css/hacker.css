@@ -302,8 +302,33 @@ span.cke_toolgroup {
   @mixin cornerScale 8px, 0px, 0px, 8px;
 }
 
+#main > .timetablepage > .quickbar .actions > button > svg,
+#main > .timetablepage > .quickbar .actions > a > svg {
+  margin: 0 !important;
+}
+
+.timetablepage .wrapper .actions > a {
+  display: inline-flex !important;
+  justify-content: center;
+  place-items: center;
+}
+
+.actions .uiButton {
+  --aug-tr: 2px !important;
+  --aug-bl: 0px !important;
+  --aug-br: 3px !important;
+  --aug-tl: 2px !important;
+}
+
 .timetablepage .wrapper .actions > * {
   color: white !important;
+  border: none !important;
+
+  --aug-tr: 2px !important;
+  --aug-bl: 0px !important;
+  --aug-br: 3px !important;
+  --aug-tl: 2px !important;
+
   > svg,
   g {
     color: white !important;

@@ -1,0 +1,630 @@
+// Variables
+$better-pale: #d3dbe9;
+$text-color: #56535f;
+$background-color: #E4EBF5;
+$background-color-dark: color-mix(in srgb, $background-color 98%, black 2%);
+$shadow-color: #c8d0e7;
+$white: #FFF;
+
+:root {
+  --better-pale: #{$better-pale} !important;
+  --text-color: #{$text-color} !important;
+  --background-primary: #ffffff !important;
+  --background-secondary: #e5e7eb !important;
+  --theme-primary: #ffffff !important;
+  --theme-secondary: #e5e7eb !important;
+  --text-primary: black !important;
+}
+
+:root, html, body, div, ol, ul {
+  scrollbar-color: rgba(black, 0.2) transparent !important;
+}
+
+:root::-webkit-scrollbar-thumb {
+  background: rgba(black, 0.2) !important;
+  border-radius: 8px !important;
+}
+
+// Mixins
+@mixin neumorphic-outer($intensity: 1) {
+  box-shadow: 
+    #{-10 * $intensity}px #{-10 * $intensity}px #{30 * $intensity}px $white,
+    #{10 * $intensity}px #{10 * $intensity}px #{30 * $intensity}px rgba($shadow-color, 0.25);
+}
+
+@mixin neumorphic-inner($intensity: 1) {
+  box-shadow: 
+    inset #{-10 * $intensity}px #{-10 * $intensity}px #{10 * $intensity}px rgba($shadow-color, 0.15),
+    inset #{10 * $intensity}px #{10 * $intensity}px #{10 * $intensity}px $white,
+    #{-10 * $intensity}px #{-10 * $intensity}px #{30 * $intensity}px $white,
+    #{5 * $intensity}px #{5 * $intensity}px #{10 * $intensity}px rgba(#818da0, 0.3) !important;
+}
+
+@mixin neumorphic-pressed($intensity: 1) {
+  box-shadow: 
+    inset #{10 * $intensity}px #{10 * $intensity}px #{10 * $intensity}px rgba($shadow-color, 0.15),
+    inset #{-10 * $intensity}px #{-10 * $intensity}px #{10 * $intensity}px $white,
+    inset #{0.2 * $intensity}rem #{0.2 * $intensity}rem #{0.5 * $intensity}rem rgba(#818da0, 0.3),
+    inset #{-0.2 * $intensity}rem #{-0.2 * $intensity}rem #{0.5 * $intensity}rem $white !important;
+}
+
+@mixin neumorphic-outer-small($intensity: 1) {
+  box-shadow: 
+    #{-3 * $intensity}px #{-3 * $intensity}px #{8 * $intensity}px $white,
+    #{3 * $intensity}px #{3 * $intensity}px #{8 * $intensity}px rgba($shadow-color, 0.25);
+}
+
+@mixin neumorphic-inner-small($intensity: 1) {
+  box-shadow: 
+    inset #{-2 * $intensity}px #{-2 * $intensity}px #{4 * $intensity}px rgba($shadow-color, 0.15),
+    inset #{2 * $intensity}px #{2 * $intensity}px #{4 * $intensity}px $white,
+    #{-2 * $intensity}px #{-2 * $intensity}px #{6 * $intensity}px $white,
+    #{1 * $intensity}px #{1 * $intensity}px #{3 * $intensity}px rgba(#818da0, 0.3);
+}
+
+@mixin neumorphic-pressed-small($intensity: 1) {
+  box-shadow: 
+    inset #{2 * $intensity}px #{2 * $intensity}px #{3 * $intensity}px rgba($shadow-color, 0.15),
+    inset #{-2 * $intensity}px #{-2 * $intensity}px #{3 * $intensity}px $white,
+    inset #{0.1 * $intensity}rem #{0.1 * $intensity}rem #{0.2 * $intensity}rem rgba(#818da0, 0.3),
+    inset #{-0.1 * $intensity}rem #{-0.1 * $intensity}rem #{0.2 * $intensity}rem $white;
+}
+
+@mixin neumorphic-above {
+  box-shadow:  4px 4px 4px rgba(#818da0, 0.3),
+               -4px -4px 4px #ffffff;
+}
+
+@mixin neumorphic-default {
+  box-shadow: 
+    inset -10px -10px 10px rgba($shadow-color, 0),
+    inset 10px 10px 10px rgba($white, 0),
+    -10px -10px 30px rgba($white, 0),
+    5px 5px 10px rgba(#818da0, 0);
+}
+
+@mixin transition($property: all, $duration: 300ms) {
+  transition: $property $duration;
+  transition-timing-function: ease-in-out;
+}
+
+// Styles
+#container {
+  background: $background-color !important;
+}
+
+#background {
+  opacity: 0.1;
+}
+
+.menuShown #container #content h1#title,
+#container #content h1#title {
+  box-shadow: none !important;
+  background: transparent;
+  border-bottom: none !important;
+
+  &::before {
+    display: none;
+  }
+}
+
+#main {
+  border-top-left-radius: 2rem;
+  @include neumorphic-outer;
+}
+
+#content {
+  left: 280px;
+
+  #toolbar {
+    overflow: visible !important;
+  }
+}
+
+.ReadingPane__ReadingPane___QEtL8 > div {
+  background: white !important;
+  @include neumorphic-outer;
+}
+
+.home-container .border {
+  background: $background-color-dark;
+  @include neumorphic-outer(0.5);
+}
+
+.messages .Viewer__sidebar___1Btu4 header button {
+  @include transition;
+  @include neumorphic-default;
+  @include neumorphic-inner(0.5);
+  border-radius: 16px !important;
+
+  &:hover {
+    @include neumorphic-inner(0.5);
+    transform: scale(1.01);
+  }
+
+  &:active {
+    @include neumorphic-pressed(0.5);
+    transform: scale(0.98);
+  }
+
+  &::after {
+    // slightly darker than $background-color
+    background: color-mix(in srgb, $background-color 85%, black 50%) !important;
+  }
+}
+
+.LabelList__LabelList___2RJFf {
+  padding: 0 8px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: visible;
+  
+  > li {
+    margin: 0 !important;
+    border-radius: 8px;
+    @include transition;
+    @include neumorphic-default;
+
+    &.LabelList__selected___3Egk7,
+    &:hover {
+      background: rgba($white, 0.44);
+      @include neumorphic-inner;
+    }
+
+    &:active {
+      @include neumorphic-pressed;
+    }
+  }
+}
+
+#shortcuts > a {
+  @include transition;
+  background: $background-color !important;
+  @include neumorphic-inner;
+
+  .shortcut {
+    background: transparent;
+  }
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    @include neumorphic-pressed;
+  }
+}
+
+.day {
+  &:hover {
+    background: transparent;
+  }
+}
+
+#menu {
+  background: transparent !important;
+  width: 280px;
+  
+  > ul {
+    li {
+      width: calc(85% - 10px) !important;
+      margin-right: 16px !important;
+    }
+    
+    &::before {
+      box-shadow: none !important;
+      border-bottom: none !important;
+    }
+  }
+
+  li {
+    @include transition;
+    @include neumorphic-default;
+    
+    &:hover {
+      background: $background-color;
+      @include neumorphic-inner;
+    }
+
+    &:active {
+      @include neumorphic-pressed;
+    }
+  }
+
+  li.active > .sub > ul > .active,
+  li.active {
+    background: $background-color !important;
+    color: #2f2e33 !important;
+    @include neumorphic-inner;
+
+    &::before {
+      background: linear-gradient(to bottom, color-mix(in srgb, var(--item-colour) 85%, white 50%), var(--item-colour)) !important;
+    }
+  }
+}
+
+.MessageList__MessageList___3DxoC {
+  background: transparent;
+  border: unset !important;
+  overflow: visible;
+  width: 100px;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
+
+  header {
+    background: transparent;
+    border: unset !important;
+    padding: 8px 0;
+
+    label {
+      background: #eef1f6;
+      @include neumorphic-inner(0.5);
+      
+
+      border-radius: 16px;
+      background: white;
+
+      &:has(input:focus) {
+        box-shadow: inset .2rem .2rem .5rem rgba(#818da0, 0.3),
+                  inset -.2rem -.2rem .5rem $white !important;
+      }
+      
+      input {
+        padding: 10px 8px;
+      }
+    }
+    
+    label:has(input:focus) {
+      box-shadow: .3rem .3rem .6rem rgba(#818da0, 0.3),
+                  -.2rem -.2rem .5rem $white;
+    }
+  }
+
+  footer {
+    border: unset !important;
+  }
+
+  ol {
+    background: $white;
+    border-radius: 16px;
+    @include neumorphic-outer(0.5);
+
+    .MessageList__unread___3imtO {
+      background: $white;
+    }
+  
+    li {
+      @include transition(all, 100ms);
+      @include neumorphic-default;
+    
+      &:hover {
+        background: rgba($background-color, 0.44);
+        @include neumorphic-inner(0.5);
+      }
+
+      &:active {
+        @include neumorphic-pressed(0.5);
+      }
+
+      &.MessageList__selected___1SJNz {
+        background: rgba($shadow-color, 0.15) !important;
+        @include neumorphic-pressed(0.4);
+      }
+    }
+  }
+}
+
+.formattedText>.wrapper,
+.coneqtMessage.composer .prime {
+  overflow-x: visible !important;
+}
+
+.cke_contents {
+  @include neumorphic-outer(0.5);
+}
+
+.userInfosvgdiv {
+  filter: invert(1);
+
+  .tooltiptext {
+    filter: invert(0);
+    box-shadow: unset !important;
+  }
+}
+
+.connectedNotificationsWrapper > div > button {
+  background: var(--theme-primary) !important;
+  svg g {
+    fill: var(--text-primary) !important;
+  }
+}
+
+button.addedButton {
+  background: var(--theme-primary) !important;
+  color: var(--text-primary) !important;
+  svg {
+    fill: var(--text-primary) !important;
+  }
+}
+
+.Avatar__Avatar___gE5kx {
+  box-shadow: 0 0 10px var(--better-main);
+}
+
+.blind:has(> input[type="checkbox"]) {
+  display: flex;
+  place-items: center;
+
+  label {
+    display: block;
+  }
+}
+
+.uiFileHandlerPanel {
+  background: color-mix(in srgb, $background-color 35%, white 90%) !important;
+  @include neumorphic-outer;
+}
+
+.Container__container___33GlY,
+.Document__document___1KJCG,
+.Module__wrapper___2sbOo {
+  overflow: visible !important;
+}
+
+.RootModule__root-module___2wT52 {
+  overflow: visible !important;
+
+  .Module__wrapper___2sbOo {
+    @include neumorphic-outer;
+  }
+}
+
+.notifications__notifications___3mmLY > button,
+.addedButton,
+.uiButton:not(.logout) {
+  border-radius: 16px !important;
+  @include transition;
+  @include neumorphic-inner(0.5);
+  background: rgba($white, 0.6) !important;
+
+  &:hover {
+    background: rgba($white, 0.44) !important;
+    @include neumorphic-inner;
+  }
+
+  &:active {
+    @include neumorphic-pressed;
+  }
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background-color: $background-color !important;
+  cursor: pointer;
+  position: relative;
+  margin: 0;
+  
+  @include neumorphic-outer-small(0.5);
+  @include transition(all, 200ms);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:checked {
+    @include neumorphic-pressed-small(0.7);
+    background-color: mix($background-color, $text-color, 85%);
+  }
+
+  &::after {
+    font-family: 'IconFamily';
+    content: '\e9e4'; // Unicode character for a checkmark
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: $text-color;
+    font-size: 16px;
+    font-weight: bold;
+    
+    transition: cubic-bezier(.53,0,.52,1) transform 200ms;
+  }
+
+  &:checked::after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &:focus {
+    outline: none;
+    @include neumorphic-inner-small(0.5);
+  }
+
+  &:active {
+    @include neumorphic-pressed-small(0.9);
+  }
+}
+
+ul.singleSelect {
+  margin-top: 8px !important;
+}
+
+.PillBox__PillBox___3GjAk,
+.pillbox {
+  button {
+    color: rgba(black, 0.5);
+    background: transparent !important;
+    transition: color 200ms;
+
+    &:hover {
+      color: black;
+    }
+
+    &.PillBox__active___3Qpi9,
+    &.depressed {
+      color: black;
+      background: rgba($background-color, 0.5) !important;
+      @include neumorphic-inner(1);
+    }
+  }
+}
+
+.Button__Button___3SRFo {
+  background: #eef1f6 !important;
+  border: none;
+  
+  padding: 10px 8px;
+  border-radius: 16px;
+
+  &:not(.Button__circular___2dGEX) {
+    @include neumorphic-inner;
+  }
+
+  &.Button__circular___2dGEX {
+    @include neumorphic-inner(0.5);
+  }
+
+  &:focus {
+    box-shadow: inset .2rem .2rem .5rem rgba(#818da0, 0.3),
+              inset -.2rem -.2rem .5rem $white !important;
+    
+              
+    &::placeholder {
+      color: rgba(black, 0.5) !important;
+    }
+  }
+}
+
+.uiSlidePane {
+  .header {
+    background: transparent !important;
+
+
+    [data-id="send"]:not([disabled]) {
+      @include neumorphic-default;
+      @include neumorphic-inner(0.5);
+      border-radius: 16px !important;
+      background: rgba(white, 0.5) !important;
+      
+      &:hover {
+        @include neumorphic-inner(0.5);
+        transform: scale(1.01);
+      }
+
+      &:active {
+        @include neumorphic-pressed(0.5);
+        transform: scale(0.98);
+      }
+
+      &::after {
+        // slightly darker than $background-color
+        background: color-mix(in srgb, $background-color 85%, black 50%) !important;
+      }
+    }
+  }
+
+  .footer {
+    @include neumorphic-inner;
+  }
+
+  .content {
+    overflow: visible !important;
+
+    .coneqtMessage .body .wrapper {
+      overflow: visible !important;
+    }
+  }
+
+  .anyoneSelect {
+    overflow: visible !important;
+
+    input.singleSelect {
+      background: #eef1f6 !important;
+      border: none;
+      @include neumorphic-inner;
+      
+      padding: 10px 8px;
+      border-radius: 16px;
+  
+      &:focus {
+        box-shadow: inset .2rem .2rem .5rem rgba(#818da0, 0.3),
+                  inset -.2rem -.2rem .5rem $white !important;
+        
+                  
+        &::placeholder {
+          color: rgba(black, 0.5) !important;
+        }
+      }
+    }
+  }
+
+
+  .prime {
+    overflow: visible !important;
+
+    input.subject {
+      background: #eef1f6 !important;
+      border: none;
+      @include neumorphic-inner(0.5);
+      
+      padding: 10px 8px;
+      border-radius: 16px;
+  
+      &:focus {
+        box-shadow: inset .2rem .2rem .5rem rgba(#818da0, 0.3),
+                  inset -.2rem -.2rem .5rem $white !important;
+      }
+    }
+
+    .cke_panel {
+      margin-top: 10px;
+    }
+
+    .cke_toolbar {
+      overflow: visible !important;
+
+      a.cke_button:hover {
+        background: rgba(white, 0.5) !important;
+        @include neumorphic-inner(0.5);
+      }
+
+      .cke_button:hover,
+      .cke_combo_button:hover {
+        background: rgba(white, 0.5) !important;
+        @include neumorphic-inner(0.5);
+      }
+
+      .cke_combo_off .cke_combo_button {
+        background-color: white !important;
+      }
+
+      .cke_combo_on .cke_combo_button,
+      .cke_button_on {
+        background-color: rgba(white, 0.5) !important;
+        color: black;
+        @include neumorphic-inner(0.5);
+      }
+    }
+  }
+}
+
+.documents {
+  table {
+    border-spacing: 0 16px !important;
+    
+    tr.document {
+      @include neumorphic-outer;
+      background: color-mix(in srgb, $background-color 85%, white 30%) !important;
+    }
+  }
+
+}
