@@ -8,6 +8,16 @@
   --text-primary: black !important;
 }
 
+.dark {
+  --better-pale: color-mix(in srgb, #1e2430 95%, white 5%) !important;
+  --text-color: #e5e7eb !important;
+  --background-primary: #1e2430 !important;
+  --background-secondary: #161c25 !important;
+  --theme-primary: #1e2430 !important;
+  --theme-secondary: #161c25 !important;
+  --text-primary: #e5e7eb !important;
+}
+
 :root, html, body, div, ol, ul {
   scrollbar-color: rgba(0, 0, 0, 0.2) transparent !important;
 }
@@ -19,6 +29,11 @@
 
 #container {
   background: #E4EBF5 !important;
+}
+
+.dark #container {
+  background: #1e2430 !important;
+  color: #e5e7eb;
 }
 
 #background {
@@ -40,6 +55,10 @@
   box-shadow: -10px -10px 30px #FFF, 10px 10px 30px rgba(200, 208, 231, 0.25);
 }
 
+.dark #main {
+  box-shadow: -10px -10px 30px #161c25, 10px 10px 30px rgba(42, 53, 69, 0.25);
+}
+
 @media (min-width: 900px) {
   #content {
     left: 280px;
@@ -55,9 +74,19 @@
   box-shadow: -10px -10px 30px #FFF, 10px 10px 30px rgba(200, 208, 231, 0.25);
 }
 
+.dark [class*=ReadingPane__ReadingPane___] > div {
+  background: color-mix(in srgb, #1e2430 95%, white 5%) !important;
+  box-shadow: -10px -10px 30px #161c25, 10px 10px 30px rgba(42, 53, 69, 0.25);
+}
+
 .home-container .border {
   background: color-mix(in srgb, #E4EBF5 98%, black 2%);
   box-shadow: -5px -5px 15px #FFF, 5px 5px 15px rgba(200, 208, 231, 0.25);
+}
+
+.dark .home-container .border {
+  background: color-mix(in srgb, #1e2430 95%, white 5%);
+  box-shadow: -5px -5px 15px #161c25, 5px 5px 15px rgba(42, 53, 69, 0.25);
 }
 
 .messages [class*=Viewer__sidebar___] header button {
@@ -68,9 +97,17 @@
   border-radius: 16px !important;
 }
 
+.dark .messages [class*=Viewer__sidebar___] header button {
+  box-shadow: inset -5px -5px 5px rgba(22, 28, 37, 0.5), inset 5px 5px 5px #2a3545, -5px -5px 15px #161c25, 2.5px 2.5px 5px rgba(0, 0, 0, 0.3) !important;
+}
+
 .messages [class*=Viewer__sidebar___] header button:hover {
   box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
   transform: scale(1.01);
+}
+
+.dark .messages [class*=Viewer__sidebar___] header button:hover {
+  box-shadow: inset -5px -5px 5px rgba(22, 28, 37, 0.5), inset 5px 5px 5px #2a3545, -5px -5px 15px #161c25, 2.5px 2.5px 5px rgba(0, 0, 0, 0.3) !important;
 }
 
 .messages [class*=Viewer__sidebar___] header button:active {
@@ -78,8 +115,16 @@
   transform: scale(0.98);
 }
 
+.dark .messages [class*=Viewer__sidebar___] header button:active {
+  box-shadow: inset 5px 5px 5px rgba(22, 28, 37, 0.5), inset -5px -5px 5px #2a3545, inset 0.1rem 0.1rem 0.25rem rgba(0, 0, 0, 0.3), inset -0.1rem -0.1rem 0.25rem #2a3545 !important;
+}
+
 .messages [class*=Viewer__sidebar___] header button::after {
   background: color-mix(in srgb, #E4EBF5 85%, black 50%) !important;
+}
+
+.dark .messages [class*=Viewer__sidebar___] header button::after {
+  background: color-mix(in srgb, #1e2430 85%, black 50%) !important;
 }
 
 [class*=LabelList__LabelList___] {
@@ -104,13 +149,26 @@
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0), inset 10px 10px 10px rgba(255, 255, 255, 0), -10px -10px 30px rgba(255, 255, 255, 0), 5px 5px 10px rgba(129, 141, 160, 0);
 }
 
+.dark [class*=LabelList__LabelList___] > li {
+  color: #e5e7eb;
+}
+
 [class*=LabelList__LabelList___] > li[class*=LabelList__selected___], [class*=LabelList__LabelList___] > li:hover {
   background: rgba(255, 255, 255, 0.44);
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
 }
 
+.dark [class*=LabelList__LabelList___] > li[class*=LabelList__selected___], .dark [class*=LabelList__LabelList___] > li:hover {
+  background: color-mix(in srgb, #1e2430 95%, white 5%);
+  box-shadow: inset -10px -10px 10px rgba(22, 28, 37, 0.5), inset 10px 10px 10px #2a3545, -10px -10px 30px #161c25, 5px 5px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
 [class*=LabelList__LabelList___] > li:active {
   box-shadow: inset 10px 10px 10px rgba(200, 208, 231, 0.15), inset -10px -10px 10px #FFF, inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
+}
+
+.dark [class*=LabelList__LabelList___] > li:active {
+  box-shadow: inset 10px 10px 10px rgba(22, 28, 37, 0.5), inset -10px -10px 10px #2a3545, inset 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.3), inset -0.2rem -0.2rem 0.5rem #2a3545 !important;
 }
 
 #shortcuts > a {
@@ -118,6 +176,12 @@
   transition-timing-function: ease-in-out;
   background: #E4EBF5 !important;
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark #shortcuts > a {
+  background: #1e2430 !important;
+  box-shadow: inset -10px -10px 10px rgba(22, 28, 37, 0.5), inset 10px 10px 10px #2a3545, -10px -10px 30px #161c25, 5px 5px 10px rgba(0, 0, 0, 0.3) !important;
+  color: #e5e7eb;
 }
 
 #shortcuts > a .shortcut {
@@ -131,6 +195,10 @@
 #shortcuts > a:active {
   transform: scale(0.95);
   box-shadow: inset 10px 10px 10px rgba(200, 208, 231, 0.15), inset -10px -10px 10px #FFF, inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
+}
+
+.dark #shortcuts > a:active {
+  box-shadow: inset 10px 10px 10px rgba(22, 28, 37, 0.5), inset -10px -10px 10px #2a3545, inset 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.3), inset -0.2rem -0.2rem 0.5rem #2a3545 !important;
 }
 
 .day:hover {
@@ -165,13 +233,26 @@
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0), inset 10px 10px 10px rgba(255, 255, 255, 0), -10px -10px 30px rgba(255, 255, 255, 0), 5px 5px 10px rgba(129, 141, 160, 0);
 }
 
+.dark #menu li {
+  color: #e5e7eb;
+}
+
 #menu li:hover {
   background: #E4EBF5;
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
 }
 
+.dark #menu li:hover {
+  background: #1e2430;
+  box-shadow: inset -10px -10px 10px rgba(22, 28, 37, 0.5), inset 10px 10px 10px #2a3545, -10px -10px 30px #161c25, 5px 5px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
 #menu li:active {
   box-shadow: inset 10px 10px 10px rgba(200, 208, 231, 0.15), inset -10px -10px 10px #FFF, inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
+}
+
+.dark #menu li:active {
+  box-shadow: inset 10px 10px 10px rgba(22, 28, 37, 0.5), inset -10px -10px 10px #2a3545, inset 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.3), inset -0.2rem -0.2rem 0.5rem #2a3545 !important;
 }
 
 #menu li.active > .sub > ul > .active, #menu li.active {
@@ -180,8 +261,18 @@
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
 }
 
+.dark #menu li.active > .sub > ul > .active, .dark #menu li.active {
+  background: #1e2430 !important;
+  color: #e5e7eb !important;
+  box-shadow: inset -10px -10px 10px rgba(22, 28, 37, 0.5), inset 10px 10px 10px #2a3545, -10px -10px 30px #161c25, 5px 5px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
 #menu li.active > .sub > ul > .active::before, #menu li.active::before {
   background: linear-gradient(to bottom, color-mix(in srgb, var(--item-colour) 85%, white 50%), var(--item-colour)) !important;
+}
+
+.dark #menu li.active > .sub > ul > .active::before, .dark #menu li.active::before {
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--item-colour) 85%, color-mix(in srgb, #1e2430 95%, white 5%) 50%), var(--item-colour)) !important;
 }
 
 [class*=MessageList__MessageList___] {
@@ -210,16 +301,33 @@
   background: white;
 }
 
+.dark [class*=MessageList__MessageList___] header label {
+  background: color-mix(in srgb, #1e2430 95%, white 5%);
+  box-shadow: inset -5px -5px 5px rgba(22, 28, 37, 0.5), inset 5px 5px 5px #2a3545, -5px -5px 15px #161c25, 2.5px 2.5px 5px rgba(0, 0, 0, 0.3) !important;
+}
+
 [class*=MessageList__MessageList___] header label:has(input:focus) {
   box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
+}
+
+.dark [class*=MessageList__MessageList___] header label:has(input:focus) {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.3), inset -0.2rem -0.2rem 0.5rem #2a3545 !important;
 }
 
 [class*=MessageList__MessageList___] header label input {
   padding: 10px 8px;
 }
 
+.dark [class*=MessageList__MessageList___] header label input {
+  color: #e5e7eb;
+}
+
 [class*=MessageList__MessageList___] header label:has(input:focus) {
   box-shadow: 0.3rem 0.3rem 0.6rem rgba(129, 141, 160, 0.3), -0.2rem -0.2rem 0.5rem #FFF;
+}
+
+.dark [class*=MessageList__MessageList___] header label:has(input:focus) {
+  box-shadow: 0.3rem 0.3rem 0.6rem rgba(0, 0, 0, 0.3), -0.2rem -0.2rem 0.5rem #2a3545;
 }
 
 [class*=MessageList__MessageList___] footer {
@@ -232,8 +340,17 @@
   box-shadow: -5px -5px 15px #FFF, 5px 5px 15px rgba(200, 208, 231, 0.25);
 }
 
+.dark [class*=MessageList__MessageList___] ol {
+  background: color-mix(in srgb, #1e2430 95%, white 5%);
+  box-shadow: -5px -5px 15px #161c25, 5px 5px 15px rgba(42, 53, 69, 0.25);
+}
+
 [class*=MessageList__MessageList___] ol [class*=MessageList__unread___] {
   background: #FFF;
+}
+
+.dark [class*=MessageList__MessageList___] ol [class*=MessageList__unread___] {
+  background: color-mix(in srgb, #1e2430 95%, white 5%);
 }
 
 [class*=MessageList__MessageList___] ol li {
@@ -242,18 +359,36 @@
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0), inset 10px 10px 10px rgba(255, 255, 255, 0), -10px -10px 30px rgba(255, 255, 255, 0), 5px 5px 10px rgba(129, 141, 160, 0);
 }
 
+.dark [class*=MessageList__MessageList___] ol li {
+  color: #e5e7eb;
+}
+
 [class*=MessageList__MessageList___] ol li:hover {
   background: rgba(228, 235, 245, 0.44);
   box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark [class*=MessageList__MessageList___] ol li:hover {
+  background: color-mix(in srgb, #1e2430 95%, white 5%);
+  box-shadow: inset -5px -5px 5px rgba(22, 28, 37, 0.5), inset 5px 5px 5px #2a3545, -5px -5px 15px #161c25, 2.5px 2.5px 5px rgba(0, 0, 0, 0.3) !important;
 }
 
 [class*=MessageList__MessageList___] ol li:active {
   box-shadow: inset 5px 5px 5px rgba(200, 208, 231, 0.15), inset -5px -5px 5px #FFF, inset 0.1rem 0.1rem 0.25rem rgba(129, 141, 160, 0.3), inset -0.1rem -0.1rem 0.25rem #FFF !important;
 }
 
+.dark [class*=MessageList__MessageList___] ol li:active {
+  box-shadow: inset 5px 5px 5px rgba(22, 28, 37, 0.5), inset -5px -5px 5px #2a3545, inset 0.1rem 0.1rem 0.25rem rgba(0, 0, 0, 0.3), inset -0.1rem -0.1rem 0.25rem #2a3545 !important;
+}
+
 [class*=MessageList__MessageList___] ol li[class*=MessageList__selected___] {
   background: rgba(200, 208, 231, 0.15) !important;
   box-shadow: inset 4px 4px 4px rgba(200, 208, 231, 0.15), inset -4px -4px 4px #FFF, inset 0.08rem 0.08rem 0.2rem rgba(129, 141, 160, 0.3), inset -0.08rem -0.08rem 0.2rem #FFF !important;
+}
+
+.dark [class*=MessageList__MessageList___] ol li[class*=MessageList__selected___] {
+  background: rgba(22, 28, 37, 0.15) !important;
+  box-shadow: inset 4px 4px 4px rgba(22, 28, 37, 0.5), inset -4px -4px 4px #2a3545, inset 0.08rem 0.08rem 0.2rem rgba(0, 0, 0, 0.3), inset -0.08rem -0.08rem 0.2rem #2a3545 !important;
 }
 
 .formattedText > .wrapper, .coneqtMessage.composer .prime {
@@ -262,6 +397,11 @@
 
 .cke_contents {
   box-shadow: -5px -5px 15px #FFF, 5px 5px 15px rgba(200, 208, 231, 0.25);
+}
+
+.dark .cke_contents {
+  box-shadow: -5px -5px 15px #161c25, 5px 5px 15px rgba(42, 53, 69, 0.25);
+  background: color-mix(in srgb, #1e2430 95%, white 5%);
 }
 
 .userInfosvgdiv {
@@ -308,6 +448,11 @@ button.addedButton svg {
   box-shadow: -10px -10px 30px #FFF, 10px 10px 30px rgba(200, 208, 231, 0.25);
 }
 
+.dark .uiFileHandlerPanel {
+  background: color-mix(in srgb, #1e2430 35%, color-mix(in srgb, #1e2430 95%, white 5%) 90%) !important;
+  box-shadow: -10px -10px 30px #161c25, 10px 10px 30px rgba(42, 53, 69, 0.25);
+}
+
 [class*=Container__container___], [class*=Document__document___], [class*=Module__wrapper___] {
   overflow: visible !important;
 }
@@ -320,6 +465,10 @@ button.addedButton svg {
   box-shadow: -10px -10px 30px #FFF, 10px 10px 30px rgba(200, 208, 231, 0.25);
 }
 
+.dark [class*=RootModule__root-module___] [class*=Module__wrapper___] {
+  box-shadow: -10px -10px 30px #161c25, 10px 10px 30px rgba(42, 53, 69, 0.25);
+}
+
 [class*=notifications__notifications___] > button, .addedButton, .uiButton:not(.logout) {
   border-radius: 16px !important;
   transition: all 300ms;
@@ -328,13 +477,28 @@ button.addedButton svg {
   background: rgba(255, 255, 255, 0.6) !important;
 }
 
+.dark [class*=notifications__notifications___] > button, .dark .addedButton, .dark .uiButton:not(.logout) {
+  box-shadow: inset -5px -5px 5px rgba(22, 28, 37, 0.5), inset 5px 5px 5px #2a3545, -5px -5px 15px #161c25, 2.5px 2.5px 5px rgba(0, 0, 0, 0.3) !important;
+  background: color-mix(in srgb, #1e2430 95%, white 5%) !important;
+  color: #e5e7eb;
+}
+
 [class*=notifications__notifications___] > button:hover, .addedButton:hover, .uiButton:not(.logout):hover {
   background: rgba(255, 255, 255, 0.44) !important;
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
 }
 
+.dark [class*=notifications__notifications___] > button:hover, .dark .addedButton:hover, .dark .uiButton:not(.logout):hover {
+  background: color-mix(in srgb, #1e2430 95%, white 5%) !important;
+  box-shadow: inset -10px -10px 10px rgba(22, 28, 37, 0.5), inset 10px 10px 10px #2a3545, -10px -10px 30px #161c25, 5px 5px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
 [class*=notifications__notifications___] > button:active, .addedButton:active, .uiButton:not(.logout):active {
   box-shadow: inset 10px 10px 10px rgba(200, 208, 231, 0.15), inset -10px -10px 10px #FFF, inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
+}
+
+.dark [class*=notifications__notifications___] > button:active, .dark .addedButton:active, .dark .uiButton:not(.logout):active {
+  box-shadow: inset 10px 10px 10px rgba(22, 28, 37, 0.5), inset -10px -10px 10px #2a3545, inset 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.3), inset -0.2rem -0.2rem 0.5rem #2a3545 !important;
 }
 
 input[type=checkbox] {
@@ -353,6 +517,14 @@ input[type=checkbox] {
   transition-timing-function: ease-in-out;
 }
 
+.dark input[type=checkbox] {
+  background-color: #1e2430 !important;
+}
+
+.dark input[type=checkbox] {
+  box-shadow: -1.5px -1.5px 4px #161c25, 1.5px 1.5px 4px rgba(42, 53, 69, 0.25);
+}
+
 input[type=checkbox]:hover {
   transform: scale(1.05);
 }
@@ -360,6 +532,11 @@ input[type=checkbox]:hover {
 input[type=checkbox]:checked {
   box-shadow: inset 1.4px 1.4px 2.1px rgba(200, 208, 231, 0.15), inset -1.4px -1.4px 2.1px #FFF, inset 0.07rem 0.07rem 0.14rem rgba(129, 141, 160, 0.3), inset -0.07rem -0.07rem 0.14rem #FFF;
   background-color: #cfd4df;
+}
+
+.dark input[type=checkbox]:checked {
+  box-shadow: inset 1.4px 1.4px 2.1px rgba(22, 28, 37, 0.5), inset -1.4px -1.4px 2.1px #2a3545, inset 0.07rem 0.07rem 0.14rem rgba(0, 0, 0, 0.3), inset -0.07rem -0.07rem 0.14rem #2a3545;
+  background-color: #3c414c;
 }
 
 input[type=checkbox]::after {
@@ -375,6 +552,10 @@ input[type=checkbox]::after {
   transition: cubic-bezier(0.53, 0, 0.52, 1) transform 200ms;
 }
 
+.dark input[type=checkbox]::after {
+  color: #e5e7eb;
+}
+
 input[type=checkbox]:checked::after {
   transform: translate(-50%, -50%) scale(1);
 }
@@ -384,8 +565,16 @@ input[type=checkbox]:focus {
   box-shadow: inset -1px -1px 2px rgba(200, 208, 231, 0.15), inset 1px 1px 2px #FFF, -1px -1px 3px #FFF, 0.5px 0.5px 1.5px rgba(129, 141, 160, 0.3);
 }
 
+.dark input[type=checkbox]:focus {
+  box-shadow: inset -1px -1px 2px rgba(22, 28, 37, 0.5), inset 1px 1px 2px #2a3545, -1px -1px 3px #161c25, 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.3);
+}
+
 input[type=checkbox]:active {
   box-shadow: inset 1.8px 1.8px 2.7px rgba(200, 208, 231, 0.15), inset -1.8px -1.8px 2.7px #FFF, inset 0.09rem 0.09rem 0.18rem rgba(129, 141, 160, 0.3), inset -0.09rem -0.09rem 0.18rem #FFF;
+}
+
+.dark input[type=checkbox]:active {
+  box-shadow: inset 1.8px 1.8px 2.7px rgba(22, 28, 37, 0.5), inset -1.8px -1.8px 2.7px #2a3545, inset 0.09rem 0.09rem 0.18rem rgba(0, 0, 0, 0.3), inset -0.09rem -0.09rem 0.18rem #2a3545;
 }
 
 ul.singleSelect {
@@ -398,14 +587,31 @@ ul.singleSelect {
   transition: color 200ms;
 }
 
+.dark [class*=PillBox__PillBox___] button, .dark .pillbox button {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 [class*=PillBox__PillBox___] button:hover, .pillbox button:hover {
   color: black;
+}
+
+.dark [class*=PillBox__PillBox___] button:hover, .dark .pillbox button:hover {
+  color: white;
 }
 
 [class*=PillBox__PillBox___] button[class*=PillBox__active___], [class*=PillBox__PillBox___] button.depressed, .pillbox button[class*=PillBox__active___], .pillbox button.depressed {
   color: black;
   background: rgba(228, 235, 245, 0.5) !important;
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark [class*=PillBox__PillBox___] button[class*=PillBox__active___], .dark [class*=PillBox__PillBox___] button.depressed, .dark .pillbox button[class*=PillBox__active___], .dark .pillbox button.depressed {
+  color: white;
+}
+
+.dark [class*=PillBox__PillBox___] button[class*=PillBox__active___], .dark [class*=PillBox__PillBox___] button.depressed, .dark .pillbox button[class*=PillBox__active___], .dark .pillbox button.depressed {
+  background: rgba(30, 36, 48, 0.5) !important;
+  box-shadow: inset -10px -10px 10px rgba(22, 28, 37, 0.5), inset 10px 10px 10px #2a3545, -10px -10px 30px #161c25, 5px 5px 10px rgba(0, 0, 0, 0.3) !important;
 }
 
 [class*=Button__Button___] {
@@ -415,16 +621,33 @@ ul.singleSelect {
   border-radius: 16px;
 }
 
+.dark [class*=Button__Button___] {
+  background: color-mix(in srgb, #1e2430 95%, white 5%) !important;
+  color: #e5e7eb;
+}
+
 [class*=Button__Button___]:not([class*=Button__circular___]) {
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark [class*=Button__Button___]:not([class*=Button__circular___]) {
+  box-shadow: inset -10px -10px 10px rgba(22, 28, 37, 0.5), inset 10px 10px 10px #2a3545, -10px -10px 30px #161c25, 5px 5px 10px rgba(0, 0, 0, 0.3) !important;
 }
 
 [class*=Button__Button___][class*=Button__circular___] {
   box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
 }
 
+.dark [class*=Button__Button___][class*=Button__circular___] {
+  box-shadow: inset -5px -5px 5px rgba(22, 28, 37, 0.5), inset 5px 5px 5px #2a3545, -5px -5px 15px #161c25, 2.5px 2.5px 5px rgba(0, 0, 0, 0.3) !important;
+}
+
 [class*=Button__Button___]:focus {
   box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
+}
+
+.dark [class*=Button__Button___]:focus {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.3), inset -0.2rem -0.2rem 0.5rem #2a3545 !important;
 }
 
 [class*=Button__Button___]:focus::-moz-placeholder {
@@ -433,6 +656,14 @@ ul.singleSelect {
 
 [class*=Button__Button___]:focus::placeholder {
   color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark [class*=Button__Button___]:focus::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.dark [class*=Button__Button___]:focus::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .uiSlidePane .header {
@@ -446,9 +677,18 @@ ul.singleSelect {
   background: rgba(255, 255, 255, 0.5) !important;
 }
 
+.dark .uiSlidePane .header [data-id=send]:not([disabled]) {
+  box-shadow: inset -5px -5px 5px rgba(22, 28, 37, 0.5), inset 5px 5px 5px #2a3545, -5px -5px 15px #161c25, 2.5px 2.5px 5px rgba(0, 0, 0, 0.3) !important;
+  background: color-mix(in srgb, #1e2430 95%, white 5%) !important;
+}
+
 .uiSlidePane .header [data-id=send]:not([disabled]):hover {
   box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
   transform: scale(1.01);
+}
+
+.dark .uiSlidePane .header [data-id=send]:not([disabled]):hover {
+  box-shadow: inset -5px -5px 5px rgba(22, 28, 37, 0.5), inset 5px 5px 5px #2a3545, -5px -5px 15px #161c25, 2.5px 2.5px 5px rgba(0, 0, 0, 0.3) !important;
 }
 
 .uiSlidePane .header [data-id=send]:not([disabled]):active {
@@ -456,12 +696,24 @@ ul.singleSelect {
   transform: scale(0.98);
 }
 
+.dark .uiSlidePane .header [data-id=send]:not([disabled]):active {
+  box-shadow: inset 5px 5px 5px rgba(22, 28, 37, 0.5), inset -5px -5px 5px #2a3545, inset 0.1rem 0.1rem 0.25rem rgba(0, 0, 0, 0.3), inset -0.1rem -0.1rem 0.25rem #2a3545 !important;
+}
+
 .uiSlidePane .header [data-id=send]:not([disabled])::after {
   background: color-mix(in srgb, #E4EBF5 85%, black 50%) !important;
 }
 
+.dark .uiSlidePane .header [data-id=send]:not([disabled])::after {
+  background: color-mix(in srgb, #1e2430 85%, black 50%) !important;
+}
+
 .uiSlidePane .footer {
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark .uiSlidePane .footer {
+  box-shadow: inset -10px -10px 10px rgba(22, 28, 37, 0.5), inset 10px 10px 10px #2a3545, -10px -10px 30px #161c25, 5px 5px 10px rgba(0, 0, 0, 0.3) !important;
 }
 
 .uiSlidePane .content {
@@ -484,8 +736,21 @@ ul.singleSelect {
   border-radius: 16px;
 }
 
+.dark .uiSlidePane .anyoneSelect input.singleSelect {
+  background: color-mix(in srgb, #1e2430 95%, white 5%) !important;
+  color: #e5e7eb;
+}
+
+.dark .uiSlidePane .anyoneSelect input.singleSelect {
+  box-shadow: inset -10px -10px 10px rgba(22, 28, 37, 0.5), inset 10px 10px 10px #2a3545, -10px -10px 30px #161c25, 5px 5px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
 .uiSlidePane .anyoneSelect input.singleSelect:focus {
   box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
+}
+
+.dark .uiSlidePane .anyoneSelect input.singleSelect:focus {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.3), inset -0.2rem -0.2rem 0.5rem #2a3545 !important;
 }
 
 .uiSlidePane .anyoneSelect input.singleSelect:focus::-moz-placeholder {
@@ -494,6 +759,14 @@ ul.singleSelect {
 
 .uiSlidePane .anyoneSelect input.singleSelect:focus::placeholder {
   color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark .uiSlidePane .anyoneSelect input.singleSelect:focus::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.dark .uiSlidePane .anyoneSelect input.singleSelect:focus::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .uiSlidePane .prime {
@@ -508,8 +781,21 @@ ul.singleSelect {
   border-radius: 16px;
 }
 
+.dark .uiSlidePane .prime input.subject {
+  background: color-mix(in srgb, #1e2430 95%, white 5%) !important;
+  color: #e5e7eb;
+}
+
+.dark .uiSlidePane .prime input.subject {
+  box-shadow: inset -5px -5px 5px rgba(22, 28, 37, 0.5), inset 5px 5px 5px #2a3545, -5px -5px 15px #161c25, 2.5px 2.5px 5px rgba(0, 0, 0, 0.3) !important;
+}
+
 .uiSlidePane .prime input.subject:focus {
   box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
+}
+
+.dark .uiSlidePane .prime input.subject:focus {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.3), inset -0.2rem -0.2rem 0.5rem #2a3545 !important;
 }
 
 .uiSlidePane .prime .cke_panel {
@@ -525,19 +811,40 @@ ul.singleSelect {
   box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
 }
 
+.dark .uiSlidePane .prime .cke_toolbar a.cke_button:hover {
+  background: color-mix(in srgb, #1e2430 95%, white 5%) !important;
+  box-shadow: inset -5px -5px 5px rgba(22, 28, 37, 0.5), inset 5px 5px 5px #2a3545, -5px -5px 15px #161c25, 2.5px 2.5px 5px rgba(0, 0, 0, 0.3) !important;
+}
+
 .uiSlidePane .prime .cke_toolbar .cke_button:hover, .uiSlidePane .prime .cke_toolbar .cke_combo_button:hover {
   background: rgba(255, 255, 255, 0.5) !important;
   box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark .uiSlidePane .prime .cke_toolbar .cke_button:hover, .dark .uiSlidePane .prime .cke_toolbar .cke_combo_button:hover {
+  background: color-mix(in srgb, #1e2430 95%, white 5%) !important;
+  box-shadow: inset -5px -5px 5px rgba(22, 28, 37, 0.5), inset 5px 5px 5px #2a3545, -5px -5px 15px #161c25, 2.5px 2.5px 5px rgba(0, 0, 0, 0.3) !important;
 }
 
 .uiSlidePane .prime .cke_toolbar .cke_combo_off .cke_combo_button {
   background-color: white !important;
 }
 
+.dark .uiSlidePane .prime .cke_toolbar .cke_combo_off .cke_combo_button {
+  background-color: color-mix(in srgb, #1e2430 95%, white 5%) !important;
+  color: #e5e7eb;
+}
+
 .uiSlidePane .prime .cke_toolbar .cke_combo_on .cke_combo_button, .uiSlidePane .prime .cke_toolbar .cke_button_on {
   background-color: rgba(255, 255, 255, 0.5) !important;
   color: black;
   box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark .uiSlidePane .prime .cke_toolbar .cke_combo_on .cke_combo_button, .dark .uiSlidePane .prime .cke_toolbar .cke_button_on {
+  background-color: color-mix(in srgb, #1e2430 95%, white 5%) !important;
+  color: #e5e7eb;
+  box-shadow: inset -5px -5px 5px rgba(22, 28, 37, 0.5), inset 5px 5px 5px #2a3545, -5px -5px 15px #161c25, 2.5px 2.5px 5px rgba(0, 0, 0, 0.3) !important;
 }
 
 .documents table {
@@ -547,6 +854,12 @@ ul.singleSelect {
 .documents table tr.document {
   box-shadow: -10px -10px 30px #FFF, 10px 10px 30px rgba(200, 208, 231, 0.25);
   background: color-mix(in srgb, #E4EBF5 85%, white 30%) !important;
+}
+
+.dark .documents table tr.document {
+  box-shadow: -10px -10px 30px #161c25, 10px 10px 30px rgba(42, 53, 69, 0.25);
+  background: color-mix(in srgb, #1e2430 85%, color-mix(in srgb, #1e2430 95%, white 5%) 30%) !important;
+  color: #e5e7eb;
 }
 
 #main > .timetablepage > .quickbar .actions > button > svg, #main > .timetablepage > .quickbar .actions > a > svg {

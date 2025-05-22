@@ -6,6 +6,13 @@ $background-color-dark: color-mix(in srgb, $background-color 98%, black 2%);
 $shadow-color: #c8d0e7;
 $white: #FFF;
 
+// Dark mode variables
+$dark-background-color: #1e2430;
+$dark-background-color-light: color-mix(in srgb, $dark-background-color 95%, white 5%);
+$dark-shadow-color-dark: #161c25;
+$dark-shadow-color-light: #2a3545;
+$dark-text-color: #e5e7eb;
+
 :root {
   --better-pale: #{$better-pale} !important;
   --text-color: #{$text-color} !important;
@@ -14,6 +21,16 @@ $white: #FFF;
   --theme-primary: #ffffff !important;
   --theme-secondary: #e5e7eb !important;
   --text-primary: black !important;
+}
+
+.dark {
+  --better-pale: #{$dark-background-color-light} !important;
+  --text-color: #{$dark-text-color} !important;
+  --background-primary: #{$dark-background-color} !important;
+  --background-secondary: #{$dark-shadow-color-dark} !important;
+  --theme-primary: #{$dark-background-color} !important;
+  --theme-secondary: #{$dark-shadow-color-dark} !important;
+  --text-primary: #{$dark-text-color} !important;
 }
 
 :root, html, body, div, ol, ul {
@@ -88,9 +105,72 @@ $white: #FFF;
   transition-timing-function: ease-in-out;
 }
 
+// Dark mode mixins
+@mixin dark-neumorphic-outer($intensity: 1) {
+  box-shadow: 
+    #{-10 * $intensity}px #{-10 * $intensity}px #{30 * $intensity}px $dark-shadow-color-dark,
+    #{10 * $intensity}px #{10 * $intensity}px #{30 * $intensity}px rgba($dark-shadow-color-light, 0.25);
+}
+
+@mixin dark-neumorphic-inner($intensity: 1) {
+  box-shadow: 
+    inset #{-10 * $intensity}px #{-10 * $intensity}px #{10 * $intensity}px rgba($dark-shadow-color-dark, 0.5),
+    inset #{10 * $intensity}px #{10 * $intensity}px #{10 * $intensity}px $dark-shadow-color-light,
+    #{-10 * $intensity}px #{-10 * $intensity}px #{30 * $intensity}px $dark-shadow-color-dark,
+    #{5 * $intensity}px #{5 * $intensity}px #{10 * $intensity}px rgba(#000, 0.3) !important;
+}
+
+@mixin dark-neumorphic-pressed($intensity: 1) {
+  box-shadow: 
+    inset #{10 * $intensity}px #{10 * $intensity}px #{10 * $intensity}px rgba($dark-shadow-color-dark, 0.5),
+    inset #{-10 * $intensity}px #{-10 * $intensity}px #{10 * $intensity}px $dark-shadow-color-light,
+    inset #{0.2 * $intensity}rem #{0.2 * $intensity}rem #{0.5 * $intensity}rem rgba(#000, 0.3),
+    inset #{-0.2 * $intensity}rem #{-0.2 * $intensity}rem #{0.5 * $intensity}rem $dark-shadow-color-light !important;
+}
+
+@mixin dark-neumorphic-outer-small($intensity: 1) {
+  box-shadow: 
+    #{-3 * $intensity}px #{-3 * $intensity}px #{8 * $intensity}px $dark-shadow-color-dark,
+    #{3 * $intensity}px #{3 * $intensity}px #{8 * $intensity}px rgba($dark-shadow-color-light, 0.25);
+}
+
+@mixin dark-neumorphic-inner-small($intensity: 1) {
+  box-shadow: 
+    inset #{-2 * $intensity}px #{-2 * $intensity}px #{4 * $intensity}px rgba($dark-shadow-color-dark, 0.5),
+    inset #{2 * $intensity}px #{2 * $intensity}px #{4 * $intensity}px $dark-shadow-color-light,
+    #{-2 * $intensity}px #{-2 * $intensity}px #{6 * $intensity}px $dark-shadow-color-dark,
+    #{1 * $intensity}px #{1 * $intensity}px #{3 * $intensity}px rgba(#000, 0.3);
+}
+
+@mixin dark-neumorphic-pressed-small($intensity: 1) {
+  box-shadow: 
+    inset #{2 * $intensity}px #{2 * $intensity}px #{3 * $intensity}px rgba($dark-shadow-color-dark, 0.5),
+    inset #{-2 * $intensity}px #{-2 * $intensity}px #{3 * $intensity}px $dark-shadow-color-light,
+    inset #{0.1 * $intensity}rem #{0.1 * $intensity}rem #{0.2 * $intensity}rem rgba(#000, 0.3),
+    inset #{-0.1 * $intensity}rem #{-0.1 * $intensity}rem #{0.2 * $intensity}rem $dark-shadow-color-light;
+}
+
+@mixin dark-neumorphic-above {
+  box-shadow: 4px 4px 4px rgba(#000, 0.3),
+              -4px -4px 4px $dark-shadow-color-light;
+}
+
+@mixin dark-neumorphic-default {
+  box-shadow: 
+    inset -10px -10px 10px rgba($dark-shadow-color-dark, 0),
+    inset 10px 10px 10px rgba($dark-shadow-color-light, 0),
+    -10px -10px 30px rgba($dark-shadow-color-dark, 0),
+    5px 5px 10px rgba(#000, 0);
+}
+
 // Styles
 #container {
   background: $background-color !important;
+  
+  .dark & {
+    background: $dark-background-color !important;
+    color: $dark-text-color;
+  }
 }
 
 #background {
@@ -111,6 +191,10 @@ $white: #FFF;
 #main {
   border-top-left-radius: 2rem;
   @include neumorphic-outer;
+  
+  .dark & {
+    @include dark-neumorphic-outer;
+  }
 }
 
 #content {
@@ -126,11 +210,21 @@ $white: #FFF;
 [class*="ReadingPane__ReadingPane___"] > div {
   background: white !important;
   @include neumorphic-outer;
+  
+  .dark & {
+    background: $dark-background-color-light !important;
+    @include dark-neumorphic-outer;
+  }
 }
 
 .home-container .border {
   background: $background-color-dark;
   @include neumorphic-outer(0.5);
+  
+  .dark & {
+    background: $dark-background-color-light;
+    @include dark-neumorphic-outer(0.5);
+  }
 }
 
 .messages [class*="Viewer__sidebar___"] header button {
@@ -139,19 +233,35 @@ $white: #FFF;
   @include neumorphic-inner(0.5);
   border-radius: 16px !important;
 
+  .dark & {
+    @include dark-neumorphic-inner(0.5);
+  }
+
   &:hover {
     @include neumorphic-inner(0.5);
     transform: scale(1.01);
+    
+    .dark & {
+      @include dark-neumorphic-inner(0.5);
+    }
   }
 
   &:active {
     @include neumorphic-pressed(0.5);
     transform: scale(0.98);
+    
+    .dark & {
+      @include dark-neumorphic-pressed(0.5);
+    }
   }
 
   &::after {
     // slightly darker than $background-color
     background: color-mix(in srgb, $background-color 85%, black 50%) !important;
+    
+    .dark & {
+      background: color-mix(in srgb, $dark-background-color 85%, black 50%) !important;
+    }
   }
 }
 
@@ -172,14 +282,27 @@ $white: #FFF;
     @include transition;
     @include neumorphic-default;
 
+    .dark & {
+      color: $dark-text-color;
+    }
+
     &[class*="LabelList__selected___"],
     &:hover {
       background: rgba($white, 0.44);
       @include neumorphic-inner;
+      
+      .dark & {
+        background: $dark-background-color-light;
+        @include dark-neumorphic-inner;
+      }
     }
 
     &:active {
       @include neumorphic-pressed;
+      
+      .dark & {
+        @include dark-neumorphic-pressed;
+      }
     }
   }
 }
@@ -188,6 +311,12 @@ $white: #FFF;
   @include transition;
   background: $background-color !important;
   @include neumorphic-inner;
+  
+  .dark & {
+    background: $dark-background-color !important;
+    @include dark-neumorphic-inner;
+    color: $dark-text-color;
+  }
 
   .shortcut {
     background: transparent;
@@ -200,6 +329,10 @@ $white: #FFF;
   &:active {
     transform: scale(0.95);
     @include neumorphic-pressed;
+    
+    .dark & {
+      @include dark-neumorphic-pressed;
+    }
   }
 }
 
@@ -234,13 +367,26 @@ $white: #FFF;
     @include transition;
     @include neumorphic-default;
     
+    .dark & {
+      color: $dark-text-color;
+    }
+    
     &:hover {
       background: $background-color;
       @include neumorphic-inner;
+      
+      .dark & {
+        background: $dark-background-color;
+        @include dark-neumorphic-inner;
+      }
     }
 
     &:active {
       @include neumorphic-pressed;
+      
+      .dark & {
+        @include dark-neumorphic-pressed;
+      }
     }
   }
 
@@ -249,9 +395,19 @@ $white: #FFF;
     background: $background-color !important;
     color: #2f2e33 !important;
     @include neumorphic-inner;
+    
+    .dark & {
+      background: $dark-background-color !important;
+      color: $dark-text-color !important;
+      @include dark-neumorphic-inner;
+    }
 
     &::before {
       background: linear-gradient(to bottom, color-mix(in srgb, var(--item-colour) 85%, white 50%), var(--item-colour)) !important;
+      
+      .dark & {
+        background: linear-gradient(to bottom, color-mix(in srgb, var(--item-colour) 85%, $dark-background-color-light 50%), var(--item-colour)) !important;
+      }
     }
   }
 }
@@ -275,6 +431,10 @@ $white: #FFF;
       background: #eef1f6;
       @include neumorphic-inner(0.5);
       
+      .dark & {
+        background: $dark-background-color-light;
+        @include dark-neumorphic-inner(0.5);
+      }
 
       border-radius: 16px;
       background: white;
@@ -282,16 +442,30 @@ $white: #FFF;
       &:has(input:focus) {
         box-shadow: inset .2rem .2rem .5rem rgba(#818da0, 0.3),
                   inset -.2rem -.2rem .5rem $white !important;
+                  
+        .dark & {
+          box-shadow: inset .2rem .2rem .5rem rgba(#000, 0.3),
+                    inset -.2rem -.2rem .5rem $dark-shadow-color-light !important;
+        }
       }
       
       input {
         padding: 10px 8px;
+        
+        .dark & {
+          color: $dark-text-color;
+        }
       }
     }
     
     label:has(input:focus) {
       box-shadow: .3rem .3rem .6rem rgba(#818da0, 0.3),
                   -.2rem -.2rem .5rem $white;
+                  
+      .dark & {
+        box-shadow: .3rem .3rem .6rem rgba(#000, 0.3),
+                    -.2rem -.2rem .5rem $dark-shadow-color-light;
+      }
     }
   }
 
@@ -303,27 +477,54 @@ $white: #FFF;
     background: $white;
     border-radius: 16px;
     @include neumorphic-outer(0.5);
+    
+    .dark & {
+      background: $dark-background-color-light;
+      @include dark-neumorphic-outer(0.5);
+    }
 
     [class*="MessageList__unread___"] {
       background: $white;
+      
+      .dark & {
+        background: $dark-background-color-light;
+      }
     }
   
     li {
       @include transition(all, 100ms);
       @include neumorphic-default;
+      
+      .dark & {
+        color: $dark-text-color;
+      }
     
       &:hover {
         background: rgba($background-color, 0.44);
         @include neumorphic-inner(0.5);
+        
+        .dark & {
+          background: $dark-background-color-light;
+          @include dark-neumorphic-inner(0.5);
+        }
       }
 
       &:active {
         @include neumorphic-pressed(0.5);
+        
+        .dark & {
+          @include dark-neumorphic-pressed(0.5);
+        }
       }
 
       &[class*="MessageList__selected___"] {
         background: rgba($shadow-color, 0.15) !important;
         @include neumorphic-pressed(0.4);
+        
+        .dark & {
+          background: rgba($dark-shadow-color-dark, 0.15) !important;
+          @include dark-neumorphic-pressed(0.4);
+        }
       }
     }
   }
@@ -336,6 +537,11 @@ $white: #FFF;
 
 .cke_contents {
   @include neumorphic-outer(0.5);
+  
+  .dark & {
+    @include dark-neumorphic-outer(0.5);
+    background: $dark-background-color-light;
+  }
 }
 
 .userInfosvgdiv {
@@ -378,6 +584,11 @@ button.addedButton {
 .uiFileHandlerPanel {
   background: color-mix(in srgb, $background-color 35%, white 90%) !important;
   @include neumorphic-outer;
+  
+  .dark & {
+    background: color-mix(in srgb, $dark-background-color 35%, $dark-background-color-light 90%) !important;
+    @include dark-neumorphic-outer;
+  }
 }
 
 [class*="Container__container___"],
@@ -391,6 +602,10 @@ button.addedButton {
 
   [class*="Module__wrapper___"] {
     @include neumorphic-outer;
+    
+    .dark & {
+      @include dark-neumorphic-outer;
+    }
   }
 }
 
@@ -401,14 +616,29 @@ button.addedButton {
   @include transition;
   @include neumorphic-inner(0.5);
   background: rgba($white, 0.6) !important;
+  
+  .dark & {
+    @include dark-neumorphic-inner(0.5);
+    background: $dark-background-color-light !important;
+    color: $dark-text-color;
+  }
 
   &:hover {
     background: rgba($white, 0.44) !important;
     @include neumorphic-inner;
+    
+    .dark & {
+      background: $dark-background-color-light !important;
+      @include dark-neumorphic-inner;
+    }
   }
 
   &:active {
     @include neumorphic-pressed;
+    
+    .dark & {
+      @include dark-neumorphic-pressed;
+    }
   }
 }
 
@@ -425,8 +655,16 @@ input[type="checkbox"] {
   position: relative;
   margin: 0;
   
+  .dark & {
+    background-color: $dark-background-color !important;
+  }
+  
   @include neumorphic-outer-small(0.5);
   @include transition(all, 200ms);
+  
+  .dark & {
+    @include dark-neumorphic-outer-small(0.5);
+  }
 
   &:hover {
     transform: scale(1.05);
@@ -435,6 +673,11 @@ input[type="checkbox"] {
   &:checked {
     @include neumorphic-pressed-small(0.7);
     background-color: mix($background-color, $text-color, 85%);
+    
+    .dark & {
+      @include dark-neumorphic-pressed-small(0.7);
+      background-color: mix($dark-background-color, $dark-text-color, 85%);
+    }
   }
 
   &::after {
@@ -448,6 +691,10 @@ input[type="checkbox"] {
     font-size: 16px;
     font-weight: bold;
     
+    .dark & {
+      color: $dark-text-color;
+    }
+    
     transition: cubic-bezier(.53,0,.52,1) transform 200ms;
   }
 
@@ -458,10 +705,18 @@ input[type="checkbox"] {
   &:focus {
     outline: none;
     @include neumorphic-inner-small(0.5);
+    
+    .dark & {
+      @include dark-neumorphic-inner-small(0.5);
+    }
   }
 
   &:active {
     @include neumorphic-pressed-small(0.9);
+    
+    .dark & {
+      @include dark-neumorphic-pressed-small(0.9);
+    }
   }
 }
 
@@ -473,24 +728,49 @@ ul.singleSelect {
 .pillbox {
   button {
     color: rgba(black, 0.5);
+    
+    .dark & {
+      color: rgba(white, 0.5);
+    }
+    
     background: transparent !important;
     transition: color 200ms;
 
     &:hover {
       color: black;
+      
+      .dark & {
+        color: white;
+      }
     }
 
     &[class*="PillBox__active___"],
     &.depressed {
       color: black;
+      
+      .dark & {
+        color: white;
+      }
+      
       background: rgba($background-color, 0.5) !important;
       @include neumorphic-inner(1);
+      
+      .dark & {
+        background: rgba($dark-background-color, 0.5) !important;
+        @include dark-neumorphic-inner(1);
+      }
     }
   }
 }
 
 [class*="Button__Button___"] {
   background: #eef1f6 !important;
+  
+  .dark & {
+    background: $dark-background-color-light !important;
+    color: $dark-text-color;
+  }
+  
   border: none;
   
   padding: 10px 8px;
@@ -498,19 +778,36 @@ ul.singleSelect {
 
   &:not([class*="Button__circular___"]) {
     @include neumorphic-inner;
+    
+    .dark & {
+      @include dark-neumorphic-inner;
+    }
   }
 
   &[class*="Button__circular___"] {
     @include neumorphic-inner(0.5);
+    
+    .dark & {
+      @include dark-neumorphic-inner(0.5);
+    }
   }
 
   &:focus {
     box-shadow: inset .2rem .2rem .5rem rgba(#818da0, 0.3),
               inset -.2rem -.2rem .5rem $white !important;
+              
+    .dark & {
+      box-shadow: inset .2rem .2rem .5rem rgba(#000, 0.3),
+                inset -.2rem -.2rem .5rem $dark-shadow-color-light !important;
+    }
     
               
     &::placeholder {
       color: rgba(black, 0.5) !important;
+      
+      .dark & {
+        color: rgba(white, 0.5) !important;
+      }
     }
   }
 }
@@ -526,25 +823,46 @@ ul.singleSelect {
       border-radius: 16px !important;
       background: rgba(white, 0.5) !important;
       
+      .dark & {
+        @include dark-neumorphic-inner(0.5);
+        background: $dark-background-color-light !important;
+      }
+      
       &:hover {
         @include neumorphic-inner(0.5);
         transform: scale(1.01);
+        
+        .dark & {
+          @include dark-neumorphic-inner(0.5);
+        }
       }
 
       &:active {
         @include neumorphic-pressed(0.5);
         transform: scale(0.98);
+        
+        .dark & {
+          @include dark-neumorphic-pressed(0.5);
+        }
       }
 
       &::after {
         // slightly darker than $background-color
         background: color-mix(in srgb, $background-color 85%, black 50%) !important;
+        
+        .dark & {
+          background: color-mix(in srgb, $dark-background-color 85%, black 50%) !important;
+        }
       }
     }
   }
 
   .footer {
     @include neumorphic-inner;
+    
+    .dark & {
+      @include dark-neumorphic-inner;
+    }
   }
 
   .content {
@@ -560,8 +878,18 @@ ul.singleSelect {
 
     input.singleSelect {
       background: #eef1f6 !important;
+      
+      .dark & {
+        background: $dark-background-color-light !important;
+        color: $dark-text-color;
+      }
+      
       border: none;
       @include neumorphic-inner;
+      
+      .dark & {
+        @include dark-neumorphic-inner;
+      }
       
       padding: 10px 8px;
       border-radius: 16px;
@@ -569,10 +897,19 @@ ul.singleSelect {
       &:focus {
         box-shadow: inset .2rem .2rem .5rem rgba(#818da0, 0.3),
                   inset -.2rem -.2rem .5rem $white !important;
+                  
+        .dark & {
+          box-shadow: inset .2rem .2rem .5rem rgba(#000, 0.3),
+                    inset -.2rem -.2rem .5rem $dark-shadow-color-light !important;
+        }
         
                   
         &::placeholder {
           color: rgba(black, 0.5) !important;
+          
+          .dark & {
+            color: rgba(white, 0.5) !important;
+          }
         }
       }
     }
@@ -584,8 +921,18 @@ ul.singleSelect {
 
     input.subject {
       background: #eef1f6 !important;
+      
+      .dark & {
+        background: $dark-background-color-light !important;
+        color: $dark-text-color;
+      }
+      
       border: none;
       @include neumorphic-inner(0.5);
+      
+      .dark & {
+        @include dark-neumorphic-inner(0.5);
+      }
       
       padding: 10px 8px;
       border-radius: 16px;
@@ -593,6 +940,11 @@ ul.singleSelect {
       &:focus {
         box-shadow: inset .2rem .2rem .5rem rgba(#818da0, 0.3),
                   inset -.2rem -.2rem .5rem $white !important;
+                  
+        .dark & {
+          box-shadow: inset .2rem .2rem .5rem rgba(#000, 0.3),
+                    inset -.2rem -.2rem .5rem $dark-shadow-color-light !important;
+        }
       }
     }
 
@@ -606,16 +958,31 @@ ul.singleSelect {
       a.cke_button:hover {
         background: rgba(white, 0.5) !important;
         @include neumorphic-inner(0.5);
+        
+        .dark & {
+          background: $dark-background-color-light !important;
+          @include dark-neumorphic-inner(0.5);
+        }
       }
 
       .cke_button:hover,
       .cke_combo_button:hover {
         background: rgba(white, 0.5) !important;
         @include neumorphic-inner(0.5);
+        
+        .dark & {
+          background: $dark-background-color-light !important;
+          @include dark-neumorphic-inner(0.5);
+        }
       }
 
       .cke_combo_off .cke_combo_button {
         background-color: white !important;
+        
+        .dark & {
+          background-color: $dark-background-color-light !important;
+          color: $dark-text-color;
+        }
       }
 
       .cke_combo_on .cke_combo_button,
@@ -623,6 +990,12 @@ ul.singleSelect {
         background-color: rgba(white, 0.5) !important;
         color: black;
         @include neumorphic-inner(0.5);
+        
+        .dark & {
+          background-color: $dark-background-color-light !important;
+          color: $dark-text-color;
+          @include dark-neumorphic-inner(0.5);
+        }
       }
     }
   }
@@ -635,6 +1008,12 @@ ul.singleSelect {
     tr.document {
       @include neumorphic-outer;
       background: color-mix(in srgb, $background-color 85%, white 30%) !important;
+      
+      .dark & {
+        @include dark-neumorphic-outer;
+        background: color-mix(in srgb, $dark-background-color 85%, $dark-background-color-light 30%) !important;
+        color: $dark-text-color;
+      }
     }
   }
 
