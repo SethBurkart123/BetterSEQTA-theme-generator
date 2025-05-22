@@ -1,0 +1,983 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --better-pale: #d3dbe9 !important;
+    --text-color: #56535f !important;
+    --background-primary: #ffffff !important;
+    --background-secondary: #e5e7eb !important;
+    --theme-primary: #ffffff !important;
+    --theme-secondary: #e5e7eb !important;
+    --text-primary: black !important;
+    --neumorphic-shadow-light: rgba(255, 255, 255, 0.15);
+    --neumorphic-shadow-dark: rgba(0, 0, 0, 0.25);
+    font-family: 'Roboto', sans-serif !important;
+
+  &.dark {
+    --better-pale: #3c3d40 !important;
+    --text-color: #d1d0c5 !important;
+    --background-primary: #1a1a1b !important;
+    --background-secondary: #2b2b2d !important;
+    --theme-primary: #2b2b2d !important;
+    --theme-secondary: #3c3d40 !important;
+    --text-primary: #ffffff !important;
+    --neumorphic-shadow-light: rgba(0, 0, 0, 0.15);
+    --neumorphic-shadow-dark: rgba(255, 255, 255, 0.25);
+  }
+
+}
+
+:root, html, body, div, ol, ul {
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent !important;
+}
+
+:root::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border-radius: 8px !important;
+}
+
+.dark::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+
+#container {
+  background: #E4EBF5 !important;
+}
+
+.dark #container {
+    background: #1a1a1b !important;
+}
+
+#background {
+  opacity: 0.1;
+}
+
+.menuShown #container #content h1#title, #container #content h1#title {
+  box-shadow: none !important;
+  background: transparent;
+  border-bottom: none !important;
+}
+
+.menuShown #container #content h1#title::before, #container #content h1#title::before {
+  display: none;
+}
+
+#main {
+  border-top-left-radius: 2rem;
+  box-shadow: -10px -10px 30px #FFF, 10px 10px 30px rgba(200, 208, 231, 0.25);
+}
+
+.dark #main {
+    box-shadow: -10px -10px 30px #3c3d40, 10px 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 900px) {
+  #content {
+    left: 280px;
+  }
+}
+
+#content #toolbar {
+  overflow: visible !important;
+}
+
+.ReadingPane__ReadingPane___QEtL8 > div {
+  background: white !important;
+  box-shadow: -10px -10px 30px #FFF, 10px 10px 30px rgba(200, 208, 231, 0.25);
+}
+
+.dark .ReadingPane__ReadingPane___QEtL8 > div {
+    background: #1a1a1b !important;
+    box-shadow: -10px -10px 30px #3c3d40, 10px 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.home-container .border {
+  background: color-mix(in srgb, #E4EBF5 98%, black 2%);
+  box-shadow: -5px -5px 15px #FFF, 5px 5px 15px rgba(200, 208, 231, 0.25);
+}
+
+.dark .home-container .border {
+    background: color-mix(in srgb, #1a1a1b 98%, white 2%);
+    box-shadow: -5px -5px 15px #3c3d40, 5px 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.messages .Viewer__sidebar___1Btu4 header button {
+  transition: all 300ms;
+  transition-timing-function: ease-in-out;
+  box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0), inset 10px 10px 10px rgba(255, 255, 255, 0), -10px -10px 30px rgba(255, 255, 255, 0), 5px 5px 10px rgba(129, 141, 160, 0);
+  box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
+  border-radius: 16px !important;
+}
+
+.dark .messages .Viewer__sidebar___1Btu4 header button {
+  box-shadow: inset -5px -5px 5px rgba(30, 30, 30, 0.15), inset 5px 5px 5px #2b2b2d, -5px -5px 15px #2b2b2d, 2.5px 2.5px 5px rgba(200, 208, 231, 0.3) !important;
+}
+
+.messages .Viewer__sidebar___1Btu4 header button:hover {
+  box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
+  transform: scale(1.01);
+}
+
+.dark .messages .Viewer__sidebar___1Btu4 header button:hover {
+  box-shadow: inset -5px -5px 5px rgba(30, 30, 30, 0.15), inset 5px 5px 5px #2b2b2d, -5px -5px 15px #2b2b2d, 2.5px 2.5px 5px rgba(200, 208, 231, 0.3) !important;
+}
+
+
+.messages .Viewer__sidebar___1Btu4 header button:active {
+  box-shadow: inset 5px 5px 5px rgba(200, 208, 231, 0.15), inset -5px -5px 5px #FFF, inset 0.1rem 0.1rem 0.25rem rgba(129, 141, 160, 0.3), inset -0.1rem -0.1rem 0.25rem #FFF !important;
+  transform: scale(0.98);
+}
+
+.dark .messages .Viewer__sidebar___1Btu4 header button:active {
+    box-shadow: inset 5px 5px 5px rgba(30, 30, 30, 0.15), inset -5px -5px 5px #2b2b2d, inset 0.1rem 0.1rem 0.25rem rgba(200, 208, 231, 0.3), inset -0.1rem -0.1rem 0.25rem #2b2b2d !important;
+}
+
+.messages .Viewer__sidebar___1Btu4 header button::after {
+  background: color-mix(in srgb, #E4EBF5 85%, black 50%) !important;
+}
+
+.dark .messages .Viewer__sidebar___1Btu4 header button::after {
+    background: color-mix(in srgb, #3c3d40 85%, white 50%) !important;
+}
+
+.LabelList__LabelList___2RJFf {
+  padding: 0 8px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: visible;
+}
+
+@media (max-width: 1200px) {
+  .LabelList__LabelList___2RJFf {
+    flex-direction: row;
+  }
+}
+
+.LabelList__LabelList___2RJFf > li {
+  margin: 0 !important;
+  border-radius: 8px;
+  transition: all 300ms;
+  transition-timing-function: ease-in-out;
+  box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0), inset 10px 10px 10px rgba(255, 255, 255, 0), -10px -10px 30px rgba(255, 255, 255, 0), 5px 5px 10px rgba(129, 141, 160, 0);
+}
+
+.dark .LabelList__LabelList___2RJFf > li {
+    box-shadow: inset -10px -10px 10px rgba(30, 30, 30, 0), inset 10px 10px 10px rgba(255, 255, 255, 0), -10px -10px 30px rgba(30, 30, 30, 0), 5px 5px 10px rgba(200, 208, 231, 0);
+}
+
+.LabelList__LabelList___2RJFf > li.LabelList__selected___3Egk7, .LabelList__LabelList___2RJFf > li:hover {
+  background: rgba(255, 255, 255, 0.44);
+  box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark .LabelList__LabelList___2RJFf > li.LabelList__selected___3Egk7, .dark .LabelList__LabelList___2RJFf > li:hover {
+    background: rgba(30, 30, 30, 0.44);
+  box-shadow: inset -10px -10px 10px rgba(30, 30, 30, 0.15), inset 10px 10px 10px #2b2b2d, -10px -10px 30px #2b2b2d, 5px 5px 10px rgba(200, 208, 231, 0.3) !important;
+}
+
+.LabelList__LabelList___2RJFf > li:active {
+  box-shadow: inset 10px 10px 10px rgba(200, 208, 231, 0.15), inset -10px -10px 10px #FFF, inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
+}
+
+.dark .LabelList__LabelList___2RJFf > li:active {
+    box-shadow: inset 10px 10px 10px rgba(30, 30, 30, 0.15), inset -10px -10px 10px #2b2b2d, inset 0.2rem 0.2rem 0.5rem rgba(200, 208, 231, 0.3), inset -0.2rem -0.2rem 0.5rem #2b2b2d !important;
+}
+
+#shortcuts > a {
+  transition: all 300ms;
+  transition-timing-function: ease-in-out;
+  background: #E4EBF5 !important;
+  box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark #shortcuts > a {
+    background: #2b2b2d !important;
+    box-shadow: inset -10px -10px 10px rgba(30, 30, 30, 0.15), inset 10px 10px 10px #2b2b2d, -10px -10px 30px #2b2b2d, 5px 5px 10px rgba(200, 208, 231, 0.3) !important;
+}
+
+#shortcuts > a .shortcut {
+  background: transparent;
+}
+
+#shortcuts > a:hover {
+  transform: scale(1.05);
+}
+
+#shortcuts > a:active {
+  transform: scale(0.95);
+  box-shadow: inset 10px 10px 10px rgba(200, 208, 231, 0.15), inset -10px -10px 10px #FFF, inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
+}
+
+.dark #shortcuts > a:active {
+    box-shadow: inset 10px 10px 10px rgba(30, 30, 30, 0.15), inset -10px -10px 10px #2b2b2d, inset 0.2rem 0.2rem 0.5rem rgba(200, 208, 231, 0.3), inset -0.2rem -0.2rem 0.5rem #2b2b2d !important;
+}
+
+.day:hover {
+  background: transparent;
+}
+
+#menu {
+  background: transparent !important;
+  width: 280px;
+}
+
+#menu > ul li {
+  width: calc(85% - 10px) !important;
+  margin-right: 16px !important;
+}
+
+#menu > ul::before {
+  box-shadow: none !important;
+  border-bottom: none !important;
+  position: unset !important;
+}
+
+@media (max-width: 900px) {
+  #menu > ul::before {
+    background-color: transparent !important;
+  }
+}
+
+#menu li {
+  transition: all 300ms;
+  transition-timing-function: ease-in-out;
+  box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0), inset 10px 10px 10px rgba(255, 255, 255, 0), -10px -10px 30px rgba(255, 255, 255, 0), 5px 5px 10px rgba(129, 141, 160, 0);
+}
+
+.dark #menu li {
+    box-shadow: inset -10px -10px 10px rgba(30, 30, 30, 0), inset 10px 10px 10px rgba(255, 255, 255, 0), -10px -10px 30px rgba(30, 30, 30, 0), 5px 5px 10px rgba(200, 208, 231, 0);
+}
+
+#menu li:hover {
+  background: #E4EBF5;
+  box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark #menu li:hover {
+    background: #3c3d40;
+    box-shadow: inset -10px -10px 10px rgba(30, 30, 30, 0.15), inset 10px 10px 10px #2b2b2d, -10px -10px 30px #2b2b2d, 5px 5px 10px rgba(200, 208, 231, 0.3) !important;
+}
+
+#menu li:active {
+  box-shadow: inset 10px 10px 10px rgba(200, 208, 231, 0.15), inset -10px -10px 10px #FFF, inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
+}
+
+.dark #menu li:active {
+    box-shadow: inset 10px 10px 10px rgba(30, 30, 30, 0.15), inset -10px -10px 10px #2b2b2d, inset 0.2rem 0.2rem 0.5rem rgba(200, 208, 231, 0.3), inset -0.2rem -0.2rem 0.5rem #2b2b2d !important;
+}
+
+#menu li.active > .sub > ul > .active, #menu li.active {
+  background: #E4EBF5 !important;
+  color: #2f2e33 !important;
+  box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark #menu li.active > .sub > ul > .active, .dark #menu li.active {
+    background: #3c3d40 !important;
+  color: #d1d0c5 !important;
+  box-shadow: inset -10px -10px 10px rgba(30, 30, 30, 0.15), inset 10px 10px 10px #2b2b2d, -10px -10px 30px #2b2b2d, 5px 5px 10px rgba(200, 208, 231, 0.3) !important;
+}
+
+
+#menu li.active > .sub > ul > .active::before, #menu li.active::before {
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--item-colour) 85%, white 50%), var(--item-colour)) !important;
+}
+
+.dark #menu li.active > .sub > ul > .active::before, .dark #menu li.active::before {
+    background: linear-gradient(to bottom, color-mix(in srgb, var(--item-colour) 85%, #2b2b2d 50%), var(--item-colour)) !important;
+}
+
+.MessageList__MessageList___3DxoC {
+  background: transparent;
+  border: unset !important;
+  overflow: visible;
+  width: 100px;
+}
+
+@media (max-width: 1200px) {
+  .MessageList__MessageList___3DxoC {
+    width: 100%;
+  }
+}
+
+.MessageList__MessageList___3DxoC header {
+  background: transparent;
+  border: unset !important;
+  padding: 8px 0;
+}
+
+.MessageList__MessageList___3DxoC header label {
+  background: #eef1f6;
+  box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
+  border-radius: 16px;
+  background: white;
+}
+
+.dark .MessageList__MessageList___3DxoC header label {
+  background: #2b2b2d;
+  box-shadow: inset -5px -5px 5px rgba(30, 30, 30, 0.15), inset 5px 5px 5px #2b2b2d, -5px -5px 15px #2b2b2d, 2.5px 2.5px 5px rgba(200, 208, 231, 0.3) !important;
+}
+
+.MessageList__MessageList___3DxoC header label:has(input:focus) {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
+}
+
+.dark .MessageList__MessageList___3DxoC header label:has(input:focus) {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(200, 208, 231, 0.3), inset -0.2rem -0.2rem 0.5rem #2b2b2d !important;
+}
+
+.MessageList__MessageList___3DxoC header label input {
+  padding: 10px 8px;
+}
+
+.MessageList__MessageList___3DxoC header label:has(input:focus) {
+  box-shadow: 0.3rem 0.3rem 0.6rem rgba(129, 141, 160, 0.3), -0.2rem -0.2rem 0.5rem #FFF;
+}
+
+.dark .MessageList__MessageList___3DxoC header label:has(input:focus) {
+    box-shadow: 0.3rem 0.3rem 0.6rem rgba(200, 208, 231, 0.3), -0.2rem -0.2rem 0.5rem #2b2b2d;
+}
+
+
+.MessageList__MessageList___3DxoC footer {
+  border: unset !important;
+}
+
+.MessageList__MessageList___3DxoC ol {
+  background: #FFF;
+  border-radius: 16px;
+  box-shadow: -5px -5px 15px #FFF, 5px 5px 15px rgba(200, 208, 231, 0.25);
+}
+
+.dark .MessageList__MessageList___3DxoC ol {
+  background: #2b2b2d;
+  box-shadow: -5px -5px 15px #3c3d40, 5px 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.MessageList__MessageList___3DxoC ol .MessageList__unread___3imtO {
+  background: #FFF;
+}
+
+.dark .MessageList__MessageList___3DxoC ol .MessageList__unread___3imtO {
+    background: #2b2b2d;
+}
+
+.MessageList__MessageList___3DxoC ol li {
+  transition: all 100ms;
+  transition-timing-function: ease-in-out;
+  box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0), inset 10px 10px 10px rgba(255, 255, 255, 0), -10px -10px 30px rgba(255, 255, 255, 0), 5px 5px 10px rgba(129, 141, 160, 0);
+}
+
+.dark .MessageList__MessageList___3DxoC ol li {
+    box-shadow: inset -10px -10px 10px rgba(30, 30, 30, 0), inset 10px 10px 10px rgba(255, 255, 255, 0), -10px -10px 30px rgba(30, 30, 30, 0), 5px 5px 10px rgba(200, 208, 231, 0);
+}
+
+.MessageList__MessageList___3DxoC ol li:hover {
+  background: rgba(228, 235, 245, 0.44);
+  box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark .MessageList__MessageList___3DxoC ol li:hover {
+    background: rgba(30, 30, 30, 0.44);
+  box-shadow: inset -5px -5px 5px rgba(30, 30, 30, 0.15), inset 5px 5px 5px #2b2b2d, -5px -5px 15px #2b2b2d, 2.5px 2.5px 5px rgba(200, 208, 231, 0.3) !important;
+}
+
+.MessageList__MessageList___3DxoC ol li:active {
+  box-shadow: inset 5px 5px 5px rgba(200, 208, 231, 0.15), inset -5px -5px 5px #FFF, inset 0.1rem 0.1rem 0.25rem rgba(129, 141, 160, 0.3), inset -0.1rem -0.1rem 0.25rem #FFF !important;
+}
+
+.dark .MessageList__MessageList___3DxoC ol li:active {
+    box-shadow: inset 5px 5px 5px rgba(30, 30, 30, 0.15), inset -5px -5px 5px #2b2b2d, inset 0.1rem 0.1rem 0.25rem rgba(200, 208, 231, 0.3), inset -0.1rem -0.1rem 0.25rem #2b2b2d !important;
+}
+
+.MessageList__MessageList___3DxoC ol li.MessageList__selected___1SJNz {
+  background: rgba(200, 208, 231, 0.15) !important;
+  box-shadow: inset 4px 4px 4px rgba(200, 208, 231, 0.15), inset -4px -4px 4px #FFF, inset 0.08rem 0.08rem 0.2rem rgba(129, 141, 160, 0.3), inset -0.08rem -0.08rem 0.2rem #FFF !important;
+}
+
+.dark .MessageList__MessageList___3DxoC ol li.MessageList__selected___1SJNz {
+    background: rgba(30, 30, 30, 0.15) !important;
+    box-shadow: inset 4px 4px 4px rgba(30, 30, 30, 0.15), inset -4px -4px 4px #2b2b2d, inset 0.08rem 0.08rem 0.2rem rgba(200, 208, 231, 0.3), inset -0.08rem -0.08rem 0.2rem #2b2b2d !important;
+}
+
+.formattedText > .wrapper, .coneqtMessage.composer .prime {
+  overflow-x: visible !important;
+}
+
+.cke_contents {
+  box-shadow: -5px -5px 15px #FFF, 5px 5px 15px rgba(200, 208, 231, 0.25);
+}
+
+.dark .cke_contents {
+    box-shadow: -5px -5px 15px #3c3d40, 5px 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.userInfosvgdiv {
+  filter: invert(1);
+}
+
+.dark .userInfosvgdiv {
+    filter: invert(0);
+}
+
+.userInfosvgdiv .tooltiptext {
+  filter: invert(0);
+  box-shadow: unset !important;
+}
+
+.dark .userInfosvgdiv .tooltiptext {
+    filter: invert(1);
+}
+
+.connectedNotificationsWrapper > div > button {
+  background: var(--theme-primary) !important;
+}
+
+.dark .connectedNotificationsWrapper > div > button {
+    background: var(--theme-primary) !important;
+}
+
+.connectedNotificationsWrapper > div > button svg g {
+  fill: var(--text-primary) !important;
+}
+
+button.addedButton {
+  background: var(--theme-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark button.addedButton {
+    background: var(--theme-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+button.addedButton svg {
+  fill: var(--text-primary) !important;
+}
+
+.Avatar__Avatar___gE5kx {
+  box-shadow: 0 0 10px var(--better-main);
+}
+
+.dark .Avatar__Avatar___gE5kx {
+    box-shadow: 0 0 10px var(--better-pale);
+}
+
+.blind:has(> input[type=checkbox]) {
+  display: flex;
+  place-items: center;
+}
+
+.blind:has(> input[type=checkbox]) label {
+  display: block;
+}
+
+.uiFileHandlerPanel {
+  background: color-mix(in srgb, #E4EBF5 35%, white 90%) !important;
+  box-shadow: -10px -10px 30px #FFF, 10px 10px 30px rgba(200, 208, 231, 0.25);
+}
+
+.dark .uiFileHandlerPanel {
+    background: color-mix(in srgb, #3c3d40 35%, #2b2b2d 90%) !important;
+    box-shadow: -10px -10px 30px #3c3d40, 10px 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.Container__container___33GlY, .Document__document___1KJCG, .Module__wrapper___2sbOo {
+  overflow: visible !important;
+}
+
+.RootModule__root-module___2wT52 {
+  overflow: visible !important;
+}
+
+.RootModule__root-module___2wT52 .Module__wrapper___2sbOo {
+  box-shadow: -10px -10px 30px #FFF, 10px 10px 30px rgba(200, 208, 231, 0.25);
+}
+
+.dark .RootModule__root-module___2wT52 .Module__wrapper___2sbOo {
+    box-shadow: -10px -10px 30px #3c3d40, 10px 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.notifications__notifications___3mmLY > button, .addedButton, .uiButton:not(.logout) {
+  border-radius: 16px !important;
+  transition: all 300ms;
+  transition-timing-function: ease-in-out;
+  box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+
+.dark .notifications__notifications___3mmLY > button, .dark .addedButton, .dark .uiButton:not(.logout) {
+    box-shadow: inset -5px -5px 5px rgba(30, 30, 30, 0.15), inset 5px 5px 5px #2b2b2d, -5px -5px 15px #2b2b2d, 2.5px 2.5px 5px rgba(200, 208, 231, 0.3) !important;
+    background: rgba(30, 30, 30, 0.6) !important;
+}
+
+.notifications__notifications___3mmLY > button:hover, .addedButton:hover, .uiButton:not(.logout):hover {
+  background: rgba(255, 255, 255, 0.44) !important;
+  box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark .notifications__notifications___3mmLY > button:hover, .dark .addedButton:hover, .dark .uiButton:not(.logout):hover {
+    background: rgba(30, 30, 30, 0.44) !important;
+    box-shadow: inset -10px -10px 10px rgba(30, 30, 30, 0.15), inset 10px 10px 10px #2b2b2d, -10px -10px 30px #2b2b2d, 5px 5px 10px rgba(200, 208, 231, 0.3) !important;
+}
+
+
+.notifications__notifications___3mmLY > button:active, .addedButton:active, .uiButton:not(.logout):active {
+  box-shadow: inset 10px 10px 10px rgba(200, 208, 231, 0.15), inset -10px -10px 10px #FFF, inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
+}
+
+.dark .notifications__notifications___3mmLY > button:active, .dark .addedButton:active, .dark .uiButton:not(.logout):active {
+    box-shadow: inset 10px 10px 10px rgba(30, 30, 30, 0.15), inset -10px -10px 10px #2b2b2d, inset 0.2rem 0.2rem 0.5rem rgba(200, 208, 231, 0.3), inset -0.2rem -0.2rem 0.5rem #2b2b2d !important;
+}
+
+input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background-color: #E4EBF5 !important;
+  cursor: pointer;
+  position: relative;
+  margin: 0;
+  box-shadow: -1.5px -1.5px 4px #FFF, 1.5px 1.5px 4px rgba(200, 208, 231, 0.25);
+  transition: all 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+.dark input[type=checkbox] {
+    background-color: #2b2b2d !important;
+    box-shadow: -1.5px -1.5px 4px #2b2b2d, 1.5px 1.5px 4px rgba(0, 0, 0, 0.25);
+}
+
+input[type=checkbox]:hover {
+  transform: scale(1.05);
+}
+
+input[type=checkbox]:checked {
+  box-shadow: inset 1.4px 1.4px 2.1px rgba(200, 208, 231, 0.15), inset -1.4px -1.4px 2.1px #FFF, inset 0.07rem 0.07rem 0.14rem rgba(129, 141, 160, 0.3), inset -0.07rem -0.07rem 0.14rem #FFF;
+  background-color: #cfd4df;
+}
+
+.dark input[type=checkbox]:checked {
+    box-shadow: inset 1.4px 1.4px 2.1px rgba(30, 30, 30, 0.15), inset -1.4px -1.4px 2.1px #2b2b2d, inset 0.07rem 0.07rem 0.14rem rgba(200, 208, 231, 0.3), inset -0.07rem -0.07rem 0.14rem #2b2b2d;
+    background-color: #5c5d61;
+}
+
+input[type=checkbox]::after {
+  font-family: "IconFamily";
+  content: "\e9e4";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: #56535f;
+  font-size: 16px;
+  font-weight: bold;
+  transition: cubic-bezier(0.53, 0, 0.52, 1) transform 200ms;
+}
+
+.dark input[type=checkbox]::after {
+    color: #ffffff;
+}
+
+input[type=checkbox]:checked::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+input[type=checkbox]:focus {
+  outline: none;
+  box-shadow: inset -1px -1px 2px rgba(200, 208, 231, 0.15), inset 1px 1px 2px #FFF, -1px -1px 3px #FFF, 0.5px 0.5px 1.5px rgba(129, 141, 160, 0.3);
+}
+
+.dark input[type=checkbox]:focus {
+    box-shadow: inset -1px -1px 2px rgba(30, 30, 30, 0.15), inset 1px 1px 2px #2b2b2d, -1px -1px 3px #2b2b2d, 0.5px 0.5px 1.5px rgba(200, 208, 231, 0.3);
+}
+
+input[type=checkbox]:active {
+  box-shadow: inset 1.8px 1.8px 2.7px rgba(200, 208, 231, 0.15), inset -1.8px -1.8px 2.7px #FFF, inset 0.09rem 0.09rem 0.18rem rgba(129, 141, 160, 0.3), inset -0.09rem -0.09rem 0.18rem #FFF;
+}
+
+.dark input[type=checkbox]:active {
+    box-shadow: inset 1.8px 1.8px 2.7px rgba(30, 30, 30, 0.15), inset -1.8px -1.8px 2.7px #2b2b2d, inset 0.09rem 0.09rem 0.18rem rgba(200, 208, 231, 0.3), inset -0.09rem -0.09rem 0.18rem #2b2b2d;
+}
+
+ul.singleSelect {
+  margin-top: 8px !important;
+}
+
+.PillBox__PillBox___3GjAk button, .pillbox button {
+  color: rgba(0, 0, 0, 0.5);
+  background: transparent !important;
+  transition: color 200ms;
+}
+
+.PillBox__PillBox___3GjAk button:hover, .pillbox button:hover {
+  color: black;
+}
+
+.dark .PillBox__PillBox___3GjAk button, .dark .pillbox button {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dark .PillBox__PillBox___3GjAk button:hover, .dark .pillbox button:hover {
+    color: #ffffff;
+}
+
+
+.PillBox__PillBox___3GjAk button.PillBox__active___3Qpi9, .PillBox__PillBox___3GjAk button.depressed, .pillbox button.PillBox__active___3Qpi9, .pillbox button.depressed {
+  color: black;
+  background: rgba(228, 235, 245, 0.5) !important;
+  box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
+}
+
+
+.dark .PillBox__PillBox___3GjAk button.PillBox__active___3Qpi9, .dark .PillBox__PillBox___3GjAk button.depressed, .dark .pillbox button.PillBox__active___3Qpi9, .dark .pillbox button.depressed {
+  color: #ffffff;
+  background: rgba(30, 30, 30, 0.5) !important;
+  box-shadow: inset -10px -10px 10px rgba(30, 30, 30, 0.15), inset 10px 10px 10px #2b2b2d, -10px -10px 30px #2b2b2d, 5px 5px 10px rgba(200, 208, 231, 0.3) !important;
+}
+
+.Button__Button___3SRFo {
+  background: #eef1f6 !important;
+  border: none;
+  padding: 10px 8px;
+  border-radius: 16px;
+}
+
+.dark .Button__Button___3SRFo {
+  background: #2b2b2d !important;
+}
+
+.Button__Button___3SRFo:not(.Button__circular___2dGEX) {
+  box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark .Button__Button___3SRFo:not(.Button__circular___2dGEX) {
+    box-shadow: inset -10px -10px 10px rgba(30, 30, 30, 0.15), inset 10px 10px 10px #2b2b2d, -10px -10px 30px #2b2b2d, 5px 5px 10px rgba(200, 208, 231, 0.3) !important;
+}
+
+.Button__Button___3SRFo.Button__circular___2dGEX {
+  box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark .Button__Button___3SRFo.Button__circular___2dGEX {
+    box-shadow: inset -5px -5px 5px rgba(30, 30, 30, 0.15), inset 5px 5px 5px #2b2b2d, -5px -5px 15px #2b2b2d, 2.5px 2.5px 5px rgba(200, 208, 231, 0.3) !important;
+}
+
+.Button__Button___3SRFo:focus {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
+}
+
+.dark .Button__Button___3SRFo:focus {
+    box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(200, 208, 231, 0.3), inset -0.2rem -0.2rem 0.5rem #2b2b2d !important;
+}
+
+.Button__Button___3SRFo:focus::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.Button__Button___3SRFo:focus::placeholder {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark .Button__Button___3SRFo:focus::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.dark .Button__Button___3SRFo:focus::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+
+.uiSlidePane .header {
+  background: transparent !important;
+}
+
+.uiSlidePane .header [data-id=send]:not([disabled]) {
+  box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0), inset 10px 10px 10px rgba(255, 255, 255, 0), -10px -10px 30px rgba(255, 255, 255, 0), 5px 5px 10px rgba(129, 141, 160, 0);
+  box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
+  border-radius: 16px !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+.dark .uiSlidePane .header [data-id=send]:not([disabled]) {
+    box-shadow: inset -5px -5px 5px rgba(30, 30, 30, 0.15), inset 5px 5px 5px #2b2b2d, -5px -5px 15px #2b2b2d, 2.5px 2.5px 5px rgba(200, 208, 231, 0.3) !important;
+    background: rgba(30, 30, 30, 0.5) !important;
+}
+
+.uiSlidePane .header [data-id=send]:not([disabled]):hover {
+  box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
+  transform: scale(1.01);
+}
+
+.dark .uiSlidePane .header [data-id=send]:not([disabled]):hover {
+    box-shadow: inset -5px -5px 5px rgba(30, 30, 30, 0.15), inset 5px 5px 5px #2b2b2d, -5px -5px 15px #2b2b2d, 2.5px 2.5px 5px rgba(200, 208, 231, 0.3) !important;
+}
+
+.uiSlidePane .header [data-id=send]:not([disabled]):active {
+  box-shadow: inset 5px 5px 5px rgba(200, 208, 231, 0.15), inset -5px -5px 5px #FFF, inset 0.1rem 0.1rem 0.25rem rgba(129, 141, 160, 0.3), inset -0.1rem -0.1rem 0.25rem #FFF !important;
+  transform: scale(0.98);
+}
+
+.dark .uiSlidePane .header [data-id=send]:not([disabled]):active {
+    box-shadow: inset 5px 5px 5px rgba(30, 30, 30, 0.15), inset -5px -5px 5px #2b2b2d, inset 0.1rem 0.1rem 0.25rem rgba(200, 208, 231, 0.3), inset -0.1rem -0.1rem 0.25rem #2b2b2d !important;
+}
+
+.uiSlidePane .header [data-id=send]:not([disabled])::after {
+  background: color-mix(in srgb, #E4EBF5 85%, black 50%) !important;
+}
+
+.dark .uiSlidePane .header [data-id=send]:not([disabled])::after {
+    background: color-mix(in srgb, #3c3d40 85%, white 50%) !important;
+}
+
+.uiSlidePane .footer {
+  box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark .uiSlidePane .footer {
+    box-shadow: inset -10px -10px 10px rgba(30, 30, 30, 0.15), inset 10px 10px 10px #2b2b2d, -10px -10px 30px #2b2b2d, 5px 5px 10px rgba(200, 208, 231, 0.3) !important;
+}
+
+.uiSlidePane .content {
+  overflow: visible !important;
+}
+
+.uiSlidePane .content .coneqtMessage .body .wrapper {
+  overflow: visible !important;
+}
+
+.uiSlidePane .anyoneSelect {
+  overflow: visible !important;
+}
+
+.uiSlidePane .anyoneSelect input.singleSelect {
+  background: #eef1f6 !important;
+  border: none;
+  box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
+  padding: 10px 8px;
+  border-radius: 16px;
+}
+
+.dark .uiSlidePane .anyoneSelect input.singleSelect {
+  background: #2b2b2d !important;
+  box-shadow: inset -10px -10px 10px rgba(30, 30, 30, 0.15), inset 10px 10px 10px #2b2b2d, -10px -10px 30px #2b2b2d, 5px 5px 10px rgba(200, 208, 231, 0.3) !important;
+}
+
+.uiSlidePane .anyoneSelect input.singleSelect:focus {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
+}
+
+.dark .uiSlidePane .anyoneSelect input.singleSelect:focus {
+    box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(200, 208, 231, 0.3), inset -0.2rem -0.2rem 0.5rem #2b2b2d !important;
+}
+
+.uiSlidePane .anyoneSelect input.singleSelect:focus::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.uiSlidePane .anyoneSelect input.singleSelect:focus::placeholder {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark .uiSlidePane .anyoneSelect input.singleSelect:focus::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.dark .uiSlidePane .anyoneSelect input.singleSelect:focus::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.uiSlidePane .prime {
+  overflow: visible !important;
+}
+
+.uiSlidePane .prime input.subject {
+  background: #eef1f6 !important;
+  border: none;
+  box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
+  padding: 10px 8px;
+  border-radius: 16px;
+}
+
+.dark .uiSlidePane .prime input.subject {
+  background: #2b2b2d !important;
+  box-shadow: inset -5px -5px 5px rgba(30, 30, 30, 0.15), inset 5px 5px 5px #2b2b2d, -5px -5px 15px #2b2b2d, 2.5px 2.5px 5px rgba(200, 208, 231, 0.3) !important;
+}
+
+.uiSlidePane .prime input.subject:focus {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
+}
+
+.dark .uiSlidePane .prime input.subject:focus {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(200, 208, 231, 0.3), inset -0.2rem -0.2rem 0.5rem #2b2b2d !important;
+}
+
+.uiSlidePane .prime .cke_panel {
+  margin-top: 10px;
+}
+
+.uiSlidePane .prime .cke_toolbar {
+  overflow: visible !important;
+}
+
+.uiSlidePane .prime .cke_toolbar a.cke_button:hover {
+  background: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark .uiSlidePane .prime .cke_toolbar a.cke_button:hover {
+    background: rgba(30, 30, 30, 0.5) !important;
+    box-shadow: inset -5px -5px 5px rgba(30, 30, 30, 0.15), inset 5px 5px 5px #2b2b2d, -5px -5px 15px #2b2b2d, 2.5px 2.5px 5px rgba(200, 208, 231, 0.3) !important;
+}
+
+.uiSlidePane .prime .cke_toolbar .cke_button:hover, .uiSlidePane .prime .cke_toolbar .cke_combo_button:hover {
+  background: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark .uiSlidePane .prime .cke_toolbar .cke_button:hover, .dark .uiSlidePane .prime .cke_toolbar .cke_combo_button:hover {
+    background: rgba(30, 30, 30, 0.5) !important;
+    box-shadow: inset -5px -5px 5px rgba(30, 30, 30, 0.15), inset 5px 5px 5px #2b2b2d, -5px -5px 15px #2b2b2d, 2.5px 2.5px 5px rgba(200, 208, 231, 0.3) !important;
+}
+
+.uiSlidePane .prime .cke_toolbar .cke_combo_off .cke_combo_button {
+  background-color: white !important;
+}
+
+.dark .uiSlidePane .prime .cke_toolbar .cke_combo_off .cke_combo_button {
+    background-color: #2b2b2d !important;
+}
+
+.uiSlidePane .prime .cke_toolbar .cke_combo_on .cke_combo_button, .uiSlidePane .prime .cke_toolbar .cke_button_on {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  color: black;
+  box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
+}
+
+.dark .uiSlidePane .prime .cke_toolbar .cke_combo_on .cke_combo_button, .dark .uiSlidePane .prime .cke_toolbar .cke_button_on {
+  background-color: rgba(30, 30, 30, 0.5) !important;
+  color: #ffffff;
+    box-shadow: inset -5px -5px 5px rgba(30, 30, 30, 0.15), inset 5px 5px 5px #2b2b2d, -5px -5px 15px #2b2b2d, 2.5px 2.5px 5px rgba(200, 208, 231, 0.3) !important;
+}
+
+.documents table {
+  border-spacing: 0 16px !important;
+}
+
+.documents table tr.document {
+  box-shadow: -10px -10px 30px #FFF, 10px 10px 30px rgba(200, 208, 231, 0.25);
+  background: color-mix(in srgb, #E4EBF5 85%, white 30%) !important;
+}
+
+.dark .documents table tr.document {
+    box-shadow: -10px -10px 30px #3c3d40, 10px 10px 30px rgba(0, 0, 0, 0.25);
+  background: color-mix(in srgb, #3c3d40 85%, #2b2b2d 30%) !important;
+}
+
+#main > .timetablepage > .quickbar .actions > button > svg, #main > .timetablepage > .quickbar .actions > a > svg {
+  margin: 0 !important;
+}
+
+/* Additional dark mode adjustments for SVG icons and text within buttons */
+.dark .connectedNotificationsWrapper > div > button svg g,
+.dark button.addedButton svg,
+.dark #main > .timetablepage > .quickbar .actions > button > svg,
+.dark #main > .timetablepage > .quickbar .actions > a > svg {
+    fill: var(--text-primary) !important;
+}
+
+
+/* Ensuring all text based elements switch color */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6,
+.dark p,
+.dark span,
+.dark label,
+.dark a,
+.dark li,
+.dark button,
+.dark input,
+.dark textarea,
+.dark select,
+.dark .cke_editable{
+  color: var(--text-color) !important;
+}
+
+/* Special case for CKEditor content in dark mode */
+.dark .cke_editable {
+  background-color: transparent !important;
+}
+
+/* Special case for placeholder text */
+.dark input::placeholder,
+.dark textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+
+/* Adjustments for UI elements that should inherit text color */
+.dark .shortcut{
+    color: inherit !important;
+}
+
+/* Ensuring all text based elements switch color */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6,
+.dark p,
+.dark span,
+.dark label,
+.dark a,
+.dark li,
+.dark button,
+.dark input,
+.dark textarea,
+.dark select {
+  color: var(--text-color) !important;
+}
+
+/* Special case for CKEditor content in dark mode */
+.dark .cke_editable {
+  background-color: transparent !important;
+}
+
+/* Special case for placeholder text */
+.dark input::placeholder,
+.dark textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Adjustments for UI elements that should inherit text color */
+.dark .shortcut{
+    color: inherit !important;
+}
+
+
+/* Additional specific dark mode adjustments */
+.dark .userInfosvgdiv .tooltiptext {
+    filter: invert(1);
+    box-shadow: 0.1rem 0.1rem 0.25rem rgba(0, 0, 0, 0.3), -0.1rem -0.1rem 0.25rem #2b2b2d !important;
+    background-color: #2b2b2d !important;
+    color: #ffffff !important;
+}
+
+.dark .uiSlidePane .prime input.subject::placeholder,
+.dark .uiSlidePane .anyoneSelect input.singleSelect::placeholder,
+.dark .Button__Button___3SRFo::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.dark .notifications__notifications___3mmLY > button, .dark .addedButton, .dark .uiButton:not(.logout) {
+  background: rgba(30, 30, 30, 0.6) !important;
+}

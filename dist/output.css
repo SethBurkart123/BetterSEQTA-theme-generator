@@ -40,15 +40,17 @@
   box-shadow: -10px -10px 30px #FFF, 10px 10px 30px rgba(200, 208, 231, 0.25);
 }
 
-#content {
-  left: 280px;
+@media (min-width: 900px) {
+  #content {
+    left: 280px;
+  }
 }
 
 #content #toolbar {
   overflow: visible !important;
 }
 
-.ReadingPane__ReadingPane___QEtL8 > div {
+[class*=ReadingPane__ReadingPane___] > div {
   background: white !important;
   box-shadow: -10px -10px 30px #FFF, 10px 10px 30px rgba(200, 208, 231, 0.25);
 }
@@ -58,7 +60,7 @@
   box-shadow: -5px -5px 15px #FFF, 5px 5px 15px rgba(200, 208, 231, 0.25);
 }
 
-.messages .Viewer__sidebar___1Btu4 header button {
+.messages [class*=Viewer__sidebar___] header button {
   transition: all 300ms;
   transition-timing-function: ease-in-out;
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0), inset 10px 10px 10px rgba(255, 255, 255, 0), -10px -10px 30px rgba(255, 255, 255, 0), 5px 5px 10px rgba(129, 141, 160, 0);
@@ -66,21 +68,21 @@
   border-radius: 16px !important;
 }
 
-.messages .Viewer__sidebar___1Btu4 header button:hover {
+.messages [class*=Viewer__sidebar___] header button:hover {
   box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
   transform: scale(1.01);
 }
 
-.messages .Viewer__sidebar___1Btu4 header button:active {
+.messages [class*=Viewer__sidebar___] header button:active {
   box-shadow: inset 5px 5px 5px rgba(200, 208, 231, 0.15), inset -5px -5px 5px #FFF, inset 0.1rem 0.1rem 0.25rem rgba(129, 141, 160, 0.3), inset -0.1rem -0.1rem 0.25rem #FFF !important;
   transform: scale(0.98);
 }
 
-.messages .Viewer__sidebar___1Btu4 header button::after {
+.messages [class*=Viewer__sidebar___] header button::after {
   background: color-mix(in srgb, #E4EBF5 85%, black 50%) !important;
 }
 
-.LabelList__LabelList___2RJFf {
+[class*=LabelList__LabelList___] {
   padding: 0 8px !important;
   display: flex;
   flex-direction: column;
@@ -88,7 +90,13 @@
   overflow: visible;
 }
 
-.LabelList__LabelList___2RJFf > li {
+@media (max-width: 1200px) {
+  [class*=LabelList__LabelList___] {
+    flex-direction: row;
+  }
+}
+
+[class*=LabelList__LabelList___] > li {
   margin: 0 !important;
   border-radius: 8px;
   transition: all 300ms;
@@ -96,12 +104,12 @@
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0), inset 10px 10px 10px rgba(255, 255, 255, 0), -10px -10px 30px rgba(255, 255, 255, 0), 5px 5px 10px rgba(129, 141, 160, 0);
 }
 
-.LabelList__LabelList___2RJFf > li.LabelList__selected___3Egk7, .LabelList__LabelList___2RJFf > li:hover {
+[class*=LabelList__LabelList___] > li[class*=LabelList__selected___], [class*=LabelList__LabelList___] > li:hover {
   background: rgba(255, 255, 255, 0.44);
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
 }
 
-.LabelList__LabelList___2RJFf > li:active {
+[class*=LabelList__LabelList___] > li:active {
   box-shadow: inset 10px 10px 10px rgba(200, 208, 231, 0.15), inset -10px -10px 10px #FFF, inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
 }
 
@@ -142,6 +150,13 @@
 #menu > ul::before {
   box-shadow: none !important;
   border-bottom: none !important;
+  position: unset !important;
+}
+
+@media (max-width: 900px) {
+  #menu > ul::before {
+    background-color: transparent !important;
+  }
 }
 
 #menu li {
@@ -169,7 +184,7 @@
   background: linear-gradient(to bottom, color-mix(in srgb, var(--item-colour) 85%, white 50%), var(--item-colour)) !important;
 }
 
-.MessageList__MessageList___3DxoC {
+[class*=MessageList__MessageList___] {
   background: transparent;
   border: unset !important;
   overflow: visible;
@@ -177,66 +192,66 @@
 }
 
 @media (max-width: 1200px) {
-  .MessageList__MessageList___3DxoC {
+  [class*=MessageList__MessageList___] {
     width: 100%;
   }
 }
 
-.MessageList__MessageList___3DxoC header {
+[class*=MessageList__MessageList___] header {
   background: transparent;
   border: unset !important;
   padding: 8px 0;
 }
 
-.MessageList__MessageList___3DxoC header label {
+[class*=MessageList__MessageList___] header label {
   background: #eef1f6;
   box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
   border-radius: 16px;
   background: white;
 }
 
-.MessageList__MessageList___3DxoC header label:has(input:focus) {
+[class*=MessageList__MessageList___] header label:has(input:focus) {
   box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
 }
 
-.MessageList__MessageList___3DxoC header label input {
+[class*=MessageList__MessageList___] header label input {
   padding: 10px 8px;
 }
 
-.MessageList__MessageList___3DxoC header label:has(input:focus) {
+[class*=MessageList__MessageList___] header label:has(input:focus) {
   box-shadow: 0.3rem 0.3rem 0.6rem rgba(129, 141, 160, 0.3), -0.2rem -0.2rem 0.5rem #FFF;
 }
 
-.MessageList__MessageList___3DxoC footer {
+[class*=MessageList__MessageList___] footer {
   border: unset !important;
 }
 
-.MessageList__MessageList___3DxoC ol {
+[class*=MessageList__MessageList___] ol {
   background: #FFF;
   border-radius: 16px;
   box-shadow: -5px -5px 15px #FFF, 5px 5px 15px rgba(200, 208, 231, 0.25);
 }
 
-.MessageList__MessageList___3DxoC ol .MessageList__unread___3imtO {
+[class*=MessageList__MessageList___] ol [class*=MessageList__unread___] {
   background: #FFF;
 }
 
-.MessageList__MessageList___3DxoC ol li {
+[class*=MessageList__MessageList___] ol li {
   transition: all 100ms;
   transition-timing-function: ease-in-out;
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0), inset 10px 10px 10px rgba(255, 255, 255, 0), -10px -10px 30px rgba(255, 255, 255, 0), 5px 5px 10px rgba(129, 141, 160, 0);
 }
 
-.MessageList__MessageList___3DxoC ol li:hover {
+[class*=MessageList__MessageList___] ol li:hover {
   background: rgba(228, 235, 245, 0.44);
   box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
 }
 
-.MessageList__MessageList___3DxoC ol li:active {
+[class*=MessageList__MessageList___] ol li:active {
   box-shadow: inset 5px 5px 5px rgba(200, 208, 231, 0.15), inset -5px -5px 5px #FFF, inset 0.1rem 0.1rem 0.25rem rgba(129, 141, 160, 0.3), inset -0.1rem -0.1rem 0.25rem #FFF !important;
 }
 
-.MessageList__MessageList___3DxoC ol li.MessageList__selected___1SJNz {
+[class*=MessageList__MessageList___] ol li[class*=MessageList__selected___] {
   background: rgba(200, 208, 231, 0.15) !important;
   box-shadow: inset 4px 4px 4px rgba(200, 208, 231, 0.15), inset -4px -4px 4px #FFF, inset 0.08rem 0.08rem 0.2rem rgba(129, 141, 160, 0.3), inset -0.08rem -0.08rem 0.2rem #FFF !important;
 }
@@ -275,7 +290,7 @@ button.addedButton svg {
   fill: var(--text-primary) !important;
 }
 
-.Avatar__Avatar___gE5kx {
+[class*=Avatar__Avatar___] {
   box-shadow: 0 0 10px var(--better-main);
 }
 
@@ -293,19 +308,19 @@ button.addedButton svg {
   box-shadow: -10px -10px 30px #FFF, 10px 10px 30px rgba(200, 208, 231, 0.25);
 }
 
-.Container__container___33GlY, .Document__document___1KJCG, .Module__wrapper___2sbOo {
+[class*=Container__container___], [class*=Document__document___], [class*=Module__wrapper___] {
   overflow: visible !important;
 }
 
-.RootModule__root-module___2wT52 {
+[class*=RootModule__root-module___] {
   overflow: visible !important;
 }
 
-.RootModule__root-module___2wT52 .Module__wrapper___2sbOo {
+[class*=RootModule__root-module___] [class*=Module__wrapper___] {
   box-shadow: -10px -10px 30px #FFF, 10px 10px 30px rgba(200, 208, 231, 0.25);
 }
 
-.notifications__notifications___3mmLY > button, .addedButton, .uiButton:not(.logout) {
+[class*=notifications__notifications___] > button, .addedButton, .uiButton:not(.logout) {
   border-radius: 16px !important;
   transition: all 300ms;
   transition-timing-function: ease-in-out;
@@ -313,12 +328,12 @@ button.addedButton svg {
   background: rgba(255, 255, 255, 0.6) !important;
 }
 
-.notifications__notifications___3mmLY > button:hover, .addedButton:hover, .uiButton:not(.logout):hover {
+[class*=notifications__notifications___] > button:hover, .addedButton:hover, .uiButton:not(.logout):hover {
   background: rgba(255, 255, 255, 0.44) !important;
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
 }
 
-.notifications__notifications___3mmLY > button:active, .addedButton:active, .uiButton:not(.logout):active {
+[class*=notifications__notifications___] > button:active, .addedButton:active, .uiButton:not(.logout):active {
   box-shadow: inset 10px 10px 10px rgba(200, 208, 231, 0.15), inset -10px -10px 10px #FFF, inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
 }
 
@@ -377,46 +392,46 @@ ul.singleSelect {
   margin-top: 8px !important;
 }
 
-.PillBox__PillBox___3GjAk button, .pillbox button {
+[class*=PillBox__PillBox___] button, .pillbox button {
   color: rgba(0, 0, 0, 0.5);
   background: transparent !important;
   transition: color 200ms;
 }
 
-.PillBox__PillBox___3GjAk button:hover, .pillbox button:hover {
+[class*=PillBox__PillBox___] button:hover, .pillbox button:hover {
   color: black;
 }
 
-.PillBox__PillBox___3GjAk button.PillBox__active___3Qpi9, .PillBox__PillBox___3GjAk button.depressed, .pillbox button.PillBox__active___3Qpi9, .pillbox button.depressed {
+[class*=PillBox__PillBox___] button[class*=PillBox__active___], [class*=PillBox__PillBox___] button.depressed, .pillbox button[class*=PillBox__active___], .pillbox button.depressed {
   color: black;
   background: rgba(228, 235, 245, 0.5) !important;
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
 }
 
-.Button__Button___3SRFo {
+[class*=Button__Button___] {
   background: #eef1f6 !important;
   border: none;
   padding: 10px 8px;
   border-radius: 16px;
 }
 
-.Button__Button___3SRFo:not(.Button__circular___2dGEX) {
+[class*=Button__Button___]:not([class*=Button__circular___]) {
   box-shadow: inset -10px -10px 10px rgba(200, 208, 231, 0.15), inset 10px 10px 10px #FFF, -10px -10px 30px #FFF, 5px 5px 10px rgba(129, 141, 160, 0.3) !important;
 }
 
-.Button__Button___3SRFo.Button__circular___2dGEX {
+[class*=Button__Button___][class*=Button__circular___] {
   box-shadow: inset -5px -5px 5px rgba(200, 208, 231, 0.15), inset 5px 5px 5px #FFF, -5px -5px 15px #FFF, 2.5px 2.5px 5px rgba(129, 141, 160, 0.3) !important;
 }
 
-.Button__Button___3SRFo:focus {
+[class*=Button__Button___]:focus {
   box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(129, 141, 160, 0.3), inset -0.2rem -0.2rem 0.5rem #FFF !important;
 }
 
-.Button__Button___3SRFo:focus::-moz-placeholder {
+[class*=Button__Button___]:focus::-moz-placeholder {
   color: rgba(0, 0, 0, 0.5) !important;
 }
 
-.Button__Button___3SRFo:focus::placeholder {
+[class*=Button__Button___]:focus::placeholder {
   color: rgba(0, 0, 0, 0.5) !important;
 }
 
@@ -532,4 +547,8 @@ ul.singleSelect {
 .documents table tr.document {
   box-shadow: -10px -10px 30px #FFF, 10px 10px 30px rgba(200, 208, 231, 0.25);
   background: color-mix(in srgb, #E4EBF5 85%, white 30%) !important;
+}
+
+#main > .timetablepage > .quickbar .actions > button > svg, #main > .timetablepage > .quickbar .actions > a > svg {
+  margin: 0 !important;
 }

@@ -114,14 +114,16 @@ $white: #FFF;
 }
 
 #content {
-  left: 280px;
+  @media (min-width: 900px) {
+    left: 280px;
+  }
 
   #toolbar {
     overflow: visible !important;
   }
 }
 
-.ReadingPane__ReadingPane___QEtL8 > div {
+[class*="ReadingPane__ReadingPane___"] > div {
   background: white !important;
   @include neumorphic-outer;
 }
@@ -131,7 +133,7 @@ $white: #FFF;
   @include neumorphic-outer(0.5);
 }
 
-.messages .Viewer__sidebar___1Btu4 header button {
+.messages [class*="Viewer__sidebar___"] header button {
   @include transition;
   @include neumorphic-default;
   @include neumorphic-inner(0.5);
@@ -153,20 +155,24 @@ $white: #FFF;
   }
 }
 
-.LabelList__LabelList___2RJFf {
+[class*="LabelList__LabelList___"] {
   padding: 0 8px !important;
   display: flex;
   flex-direction: column;
   gap: 4px;
   overflow: visible;
-  
+
+  @media (max-width: 1200px) {
+    flex-direction: row;
+  }
+
   > li {
     margin: 0 !important;
     border-radius: 8px;
     @include transition;
     @include neumorphic-default;
 
-    &.LabelList__selected___3Egk7,
+    &[class*="LabelList__selected___"],
     &:hover {
       background: rgba($white, 0.44);
       @include neumorphic-inner;
@@ -216,6 +222,11 @@ $white: #FFF;
     &::before {
       box-shadow: none !important;
       border-bottom: none !important;
+      position: unset !important;
+
+      @media (max-width: 900px) {
+        background-color: transparent !important;
+      }
     }
   }
 
@@ -245,7 +256,7 @@ $white: #FFF;
   }
 }
 
-.MessageList__MessageList___3DxoC {
+[class*="MessageList__MessageList___"] {
   background: transparent;
   border: unset !important;
   overflow: visible;
@@ -293,7 +304,7 @@ $white: #FFF;
     border-radius: 16px;
     @include neumorphic-outer(0.5);
 
-    .MessageList__unread___3imtO {
+    [class*="MessageList__unread___"] {
       background: $white;
     }
   
@@ -310,7 +321,7 @@ $white: #FFF;
         @include neumorphic-pressed(0.5);
       }
 
-      &.MessageList__selected___1SJNz {
+      &[class*="MessageList__selected___"] {
         background: rgba($shadow-color, 0.15) !important;
         @include neumorphic-pressed(0.4);
       }
@@ -351,7 +362,7 @@ button.addedButton {
   }
 }
 
-.Avatar__Avatar___gE5kx {
+[class*="Avatar__Avatar___"] {
   box-shadow: 0 0 10px var(--better-main);
 }
 
@@ -369,21 +380,21 @@ button.addedButton {
   @include neumorphic-outer;
 }
 
-.Container__container___33GlY,
-.Document__document___1KJCG,
-.Module__wrapper___2sbOo {
+[class*="Container__container___"],
+[class*="Document__document___"],
+[class*="Module__wrapper___"] {
   overflow: visible !important;
 }
 
-.RootModule__root-module___2wT52 {
+[class*="RootModule__root-module___"] {
   overflow: visible !important;
 
-  .Module__wrapper___2sbOo {
+  [class*="Module__wrapper___"] {
     @include neumorphic-outer;
   }
 }
 
-.notifications__notifications___3mmLY > button,
+[class*="notifications__notifications___"] > button,
 .addedButton,
 .uiButton:not(.logout) {
   border-radius: 16px !important;
@@ -458,7 +469,7 @@ ul.singleSelect {
   margin-top: 8px !important;
 }
 
-.PillBox__PillBox___3GjAk,
+[class*="PillBox__PillBox___"],
 .pillbox {
   button {
     color: rgba(black, 0.5);
@@ -469,7 +480,7 @@ ul.singleSelect {
       color: black;
     }
 
-    &.PillBox__active___3Qpi9,
+    &[class*="PillBox__active___"],
     &.depressed {
       color: black;
       background: rgba($background-color, 0.5) !important;
@@ -478,18 +489,18 @@ ul.singleSelect {
   }
 }
 
-.Button__Button___3SRFo {
+[class*="Button__Button___"] {
   background: #eef1f6 !important;
   border: none;
   
   padding: 10px 8px;
   border-radius: 16px;
 
-  &:not(.Button__circular___2dGEX) {
+  &:not([class*="Button__circular___"]) {
     @include neumorphic-inner;
   }
 
-  &.Button__circular___2dGEX {
+  &[class*="Button__circular___"] {
     @include neumorphic-inner(0.5);
   }
 
@@ -627,4 +638,9 @@ ul.singleSelect {
     }
   }
 
+}
+
+#main>.timetablepage>.quickbar .actions>button>svg,
+#main>.timetablepage>.quickbar .actions>a>svg {
+  margin: 0 !important;
 }

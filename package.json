@@ -1,7 +1,8 @@
 {
   "scripts": {
     "hacker": "bun watchAndCopy.ts css/hacker.css dist/output.css",
-    "neumorphic": "bun watchAndCopy.ts css/neumorphic.scss dist/output.css"
+    "neumorphic": "bun watchAndCopy.ts css/neumorphic.scss dist/output.css",
+    "minimal": "bun watchAndCopy.ts css/minimal.scss dist/output.css"
   },
   "devDependencies": {
     "postcss": "^8.4.41",

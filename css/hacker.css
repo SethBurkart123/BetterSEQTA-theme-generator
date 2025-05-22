@@ -8,10 +8,10 @@ ul.singleSelect > li:has(.extra) {
 
 .singleSelect,
 .uiShortText.subject,
-body button.Button__Button___3SRFo,
+body button[class*="Button__Button___"],
 body button.uiButton,
-.MessageList__subject___1NV5O,
-.Message__subject___3jJWQ,
+[class*="MessageList__subject___"],
+[class*="Message__subject___"],
 .shortcut,
 #menu li,
 h1, h2, h4, h5, h6, button {
@@ -164,7 +164,7 @@ html {
 }
 
 #main > .reports > .item > .report,
-.MenuButton__MenuPanel___2q42B {
+[class*="MenuButton__MenuPanel___"] {
   @extend .base3;
   @extend .thin;
   @extend .no-sides;
@@ -201,7 +201,7 @@ span.cke_toolgroup {
   right: 16px !important;
 }
 .uiFileHandlerPanel {
-  .PillBox__PillBox___3GjAk {
+  [class*="PillBox__PillBox___"] {
     @extend .base;
     @extend .thin;
     @extend .no-sides;
@@ -209,11 +209,11 @@ span.cke_toolgroup {
 
     background: linear-gradient(to bottom, color-mix(in srgb, var(--better-main) 20%, transparent), black) !important;
 
-    .Button__Button___3SRFo {
+    [class*="Button__Button___"] {
       background: transparent !important;
     }
 
-    .PillBox__active___3Qpi9 {
+    [class*="PillBox__active___"] {
       background: var(--better-main) !important;
     }
   }
@@ -265,7 +265,7 @@ span.cke_toolgroup {
   }
 }
 
-.PillBox__PillBox___3GjAk {
+[class*="PillBox__PillBox___"] {
   --aug-tl: 6px !important;
   --aug-tr: 2px !important;
   --aug-bl: 4px !important;
@@ -274,15 +274,15 @@ span.cke_toolgroup {
   > button {
     background: transparent !important;
 
-    &.PillBox__active___3Qpi9 {
+    &[class*="PillBox__active___"] {
       background: color-mix(in srgb, var(--better-main) 20%, black) !important;
     }
   }
 }
 
-.Input__Input___3RSTI,
-.LabelList__selected___3Egk7,
-:not(.PillBox__PillBox___3GjAk) > .Button__Button___3SRFo:not(.Button__circular___2dGEX),
+[class*="Input__Input___"],
+[class*="LabelList__selected___"],
+:not([class*="PillBox__PillBox___"]) > [class*="Button__Button___"]:not([class*="Button__circular___"]),
 .legacy-root button.uiButton:not(.close),
 .legacy-root a:not(.cke_button):not(.NewsArticle) {
   @extend .base2;
@@ -364,7 +364,7 @@ span.cke_toolgroup {
 }
 
 #ExtensionPopup,
-.Message__Message___3oJaU,
+[class*="Message__Message___"],
 .uiSlidePane .pane.tall,
 .home-container > div {
   overflow: clip !important;
@@ -440,7 +440,7 @@ span.cke_toolgroup {
 #menu,
 .home-container > div,
 .cke_contents,
-.Message__Message___3oJaU,
+[class*="Message__Message___"],
 #ExtensionPopup {
   &::before {
     content: "";
@@ -479,7 +479,7 @@ span.cke_toolgroup {
   }
 }
 
-.Message__Message___3oJaU {
+[class*="Message__Message___"] {
   padding: 8px;
   --aug-l-extend1: 50% !important;
 }
@@ -492,7 +492,7 @@ span.cke_toolgroup {
   filter: invert(1);
 }
 
-.MediaRecorder__ready___6kdd6 {
+[class*="MediaRecorder__ready___"] {
   color: var(--better-main) !important;
   opacity: 0.8 !important;
 }

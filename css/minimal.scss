@@ -1,0 +1,58 @@
+$sidebar-width: 260px;
+
+:root, html, body, div, ol, ul {
+  scrollbar-color: rgba(black, 0.2) transparent !important;
+}
+
+.menuShown #container #content h1#title,
+#container #content h1#title {
+  box-shadow: none !important;
+  background: transparent;
+  border-bottom: none !important;
+
+  &::before {
+    display: none;
+  }
+}
+
+#content {
+  left: $sidebar-width;
+
+  .titlebar,
+  #title,
+  &::before {
+    display: none;
+  }
+
+  .connectedNotificationsWrapper > div > button {
+    right: 16px;
+  }
+}
+
+#menu {
+  width: $sidebar-width !important;
+
+  ul {
+    width: 100% !important;
+
+    &::before {
+      box-shadow: none !important;
+      border-bottom: none !important;
+      position: unset !important;
+    }
+
+    li {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 24px;
+      border-bottom-right-radius: 24px;
+      width: 88% !important;
+    }
+  }
+}
+
+#main>.timetablepage>.quickbar .actions>button>svg, #main>.timetablepage>.quickbar .actions>a>svg {
+  margin: 0 !important;
+}
